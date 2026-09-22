@@ -9,7 +9,7 @@ const CONFIG = Object.freeze({
 });
 
 let catalog = [];
-let activeView = "discover";
+let activeView = "all";
 let carouselIndex = 0;
 let feedIndex = 0;
 
@@ -265,6 +265,7 @@ function renderPanoramaShowcase() {
 }
 
 function render(items) {
+  document.body.classList.toggle("feed-mode", activeView === "feed");
   const term = $("#search").value.trim();
   $("#result-count").textContent = `${items.length} ${items.length === 1 ? "item" : "itens"}`;
 
@@ -479,7 +480,7 @@ $("#discover-grid").addEventListener("click", async event => {
     return;
   }
 
-  const slideAction = event.target.closest("[data-feed-id][class*='feed-inline-'], .feed-open-fullscreen");
+  const slideAction = event.target.closest(".feed-open-fullscreen, .feed-inline-gyro, .feed-inline-360, .feed-inline-share, .feed-inline-like");
   if (slideAction) {
     const item = catalog.find(entry => entry.id === slideAction.dataset.feedId);
     if (!item) return;
@@ -555,6 +556,7 @@ document.querySelectorAll(".library-action").forEach(button => {
       item.classList.toggle("is-active", item === button);
     });
 
+    document.body.classList.toggle("feed-mode", activeView === "feed");
     $("#search").value = "";
     render(filteredCatalog(""));
     window.scrollTo({ top: 0, behavior: "smooth" });
