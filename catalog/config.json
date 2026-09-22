@@ -5,6 +5,7 @@
   "api_rate_limit_per_run": 20,
   "api_max_requests_per_day": 100,
   "api_min_interval_ms": 1000,
+  "api_backoff_seconds": 5,
   "sources": {
     "nasa": true,
     "dpla": false,
