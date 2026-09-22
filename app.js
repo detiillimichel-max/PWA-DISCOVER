@@ -9,6 +9,7 @@ const CONFIG = Object.freeze({
 });
 
 let catalog = [];
+let activeFilter = "all";
 
 const $ = (selector) => document.querySelector(selector);
 
@@ -80,6 +81,40 @@ function searchCatalog(term) {
     .map(result => result.item);
 }
 
+function renderIcons() {
+  if (window.lucide?.createIcons) window.lucide.createIcons();
+}
+
+function filteredCatalog(term = $("#search").value) {
+  const base = term.trim() ? searchCatalog(term) : catalog;
+  if (activeFilter === "360") return base.filter(item => item.type === "panorama360");
+  if (activeFilter === "normal") return base.filter(item => item.type !== "panorama360");
+  return base;
+}
+
+function renderPanoramaShowcase() {
+  const section = $("#panorama-section");
+  const grid = $("#panorama-grid");
+  if (!section || !grid) return;
+
+  const panoramas = catalog.filter(item => item.type === "panorama360" && item.panorama);
+  section.hidden = !panoramas.length;
+  grid.innerHTML = panoramas.slice(0, 5).map(item => `
+    <article class="panorama-card">
+      <div class="panorama-card-media">
+        <img src="${escapeHtml(item.image || item.panorama || "")}" alt="" loading="lazy" referrerpolicy="no-referrer">
+        <span class="panorama-badge"><i data-lucide="orbit" aria-hidden="true"></i> 360°</span>
+      </div>
+      <div class="panorama-card-body">
+        <h3>${escapeHtml(item.title)}</h3>
+        <p>${escapeHtml(item.source || "Fonte original")}</p>
+        <button class="panorama-button" type="button" data-panorama-id="${escapeHtml(item.id)}"><i data-lucide="rotate-3d" aria-hidden="true"></i> Explorar 360°</button>
+      </div>
+    </article>
+  `).join("");
+  renderIcons();
+}
+
 function render(items) {
   const grid = $("#discover-grid");
   const term = $("#search").value.trim();
@@ -125,11 +160,13 @@ function render(items) {
             class="panorama-button"
             type="button"
             data-panorama-id="${escapeHtml(item.id)}"
-          >🌀 Abrir experiência 360°</button>
+          ><i data-lucide="rotate-3d" aria-hidden="true"></i> Abrir experiência 360°</button>
         ` : ""}
       </div>
     </article>
   `).join("");
+  renderIcons();
+  renderPanoramaShowcase();
 }
 
 function escapeHtml(value) {
@@ -288,7 +325,7 @@ $("#search").addEventListener("input", event => {
   const results = cached || searchCatalog(term);
 
   if (!cached) writeSearchCache(term, results);
-  render(results);
+  render(filteredCatalog(term));
 });
 
 $("#discover-grid").addEventListener("click", event => {
@@ -299,6 +336,28 @@ $("#discover-grid").addEventListener("click", event => {
   if (item && window.DISCOVER360?.open) {
     window.DISCOVER360.open(item);
   }
+});
+
+
+document.querySelectorAll(".library-action").forEach(button => {
+  button.addEventListener("click", () => {
+    activeFilter = button.dataset.filter || "all";
+    document.querySelectorAll(".library-action").forEach(item => {
+      item.classList.toggle("is-active", item === button);
+    });
+    $("#search").value = "";
+    render(filteredCatalog(""));
+  });
+});
+
+$("#show-all-360")?.addEventListener("click", () => {
+  activeFilter = "360";
+  document.querySelectorAll(".library-action").forEach(button => {
+    button.classList.toggle("is-active", button.dataset.filter === "360");
+  });
+  $("#search").value = "";
+  render(filteredCatalog(""));
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 loadCatalog();
