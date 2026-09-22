@@ -15,6 +15,22 @@ let feedIndex = 0;
 
 const $ = (selector) => document.querySelector(selector);
 
+function exitFeedMode() {
+  activeView = "all";
+  carouselIndex = 0;
+  feedIndex = 0;
+  document.body.classList.remove("feed-mode");
+  $("#feed-back")?.addEventListener("click", exitFeedMode);
+
+document.querySelectorAll(".library-action").forEach(button => {
+    button.classList.toggle("is-active", button.dataset.view === "all");
+  });
+  $("#search").value = "";
+  render(filteredCatalog("")); 
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+
 function normalize(text) {
   return String(text || "")
     .normalize("NFD")
