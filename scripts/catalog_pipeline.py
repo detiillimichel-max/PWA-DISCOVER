@@ -1,5 +1,7 @@
+import html
 import json
 import os
+import re
 import time
 from collections import defaultdict
 from pathlib import Path
@@ -76,7 +78,12 @@ class RateLimiter:
 
         request = Request(
             url,
-            headers={"User-Agent": "DISCOVER-Catalog-Pipeline/1.0"},
+            headers={
+                "User-Agent": (
+                    "DISCOVER-Catalog-Pipeline/1.0 "
+                    "(https://github.com/detiillimichel-max/PWA-DISCOVER)"
+                )
+            },
         )
 
         try:
@@ -313,6 +320,192 @@ def fetch_dpla_items(limiter):
     return items
 
 
+
+def _commons_metadata_value(metadata, key):
+    value = metadata.get(key) or {}
+    if isinstance(value, dict):
+        return value.get("value") or value.get("rawvalue") or ""
+    return str(value)
+
+
+def _strip_html(value):
+    text = html.unescape(str(value or ""))
+    return re.sub(r"<[^>]+>", " ", text).strip()
+
+
+def _clean_commons_text(value, fallback):
+    text = _strip_html(value)
+    text = re.sub(r"\\[\\[([^\\]|]+)(?:\\|([^\\]]+))?\\]\\]", r"\\2", text)
+    text = re.sub(r"\\[\\[([^\\]]+)\\]\\]", r"\\1", text)
+    return " ".join(text.split()) or fallback
+
+
+def _is_equirectangular(width, height, metadata):
+    if not width or not height:
+        return False
+
+    projection = _clean_commons_text(
+        _commons_metadata_value(metadata, "Projection"),
+        "",
+    ).lower()
+
+    if "equirectangular" in projection:
+        return True
+
+    # The source category is explicitly curated as:
+    # "360° panoramas with equirectangular projection".
+    # Keep a conservative 2:1 aspect-ratio check as a second validation.
+    ratio = width / height
+    return 1.85 <= ratio <= 2.15
+
+
+def fetch_wikimedia_360_items(limiter, config):
+    cinema = config.get("cinema", {})
+    max_items = max(
+        1,
+        int((cinema.get("source_item_limits") or {}).get("wikimedia", 5)),
+    )
+    category_limit = max(5, min(10, max_items * 2))
+    categories = cinema.get("wikimedia_360_categories") or [
+        "Category:360° panoramas with equirectangular projection",
+        "Category:360° panoramas of Mars",
+    ]
+
+    candidates = []
+
+    for category in categories:
+        if len(candidates) >= max_items * 2:
+            break
+
+        params = urlencode({
+            "action": "query",
+            "generator": "categorymembers",
+            "gcmtitle": category,
+            "gcmtype": "file",
+            "gcmlimit": category_limit,
+            "prop": "imageinfo",
+            "iiprop": "url|size|mime|extmetadata",
+            "iiurlwidth": 4096,
+            "format": "json",
+            "formatversion": 2,
+        })
+        url = f"https://commons.wikimedia.org/w/api.php?{params}"
+
+        try:
+            data = limiter.get_json(url)
+        except DailyLimitReached as exc:
+            print(f"[WIKIMEDIA] {exc}; fonte interrompida com segurança.")
+            break
+        except Exception as exc:
+            print(f"[WIKIMEDIA] Categoria não incorporada: {category} • {exc}")
+            continue
+
+        for page in data.get("query", {}).get("pages", []):
+            info_list = page.get("imageinfo") or []
+            info = info_list[0] if info_list else {}
+            width = int(info.get("width") or 0)
+            height = int(info.get("height") or 0)
+            mime = str(info.get("mime") or "").lower()
+
+            # Photo Sphere Viewer works best here with JPEG equirectangular
+            # panoramas. We deliberately skip TIFF/WEBP/other large formats
+            # in this first protected test.
+            if mime != "image/jpeg":
+                continue
+
+            if not _is_equirectangular(width, height, info.get("extmetadata") or {}):
+                continue
+
+            scaled = info.get("thumburl") or info.get("url")
+            original_url = info.get("url")
+            description_url = info.get("descriptionurl")
+            if not scaled or not original_url or not description_url:
+                continue
+
+            metadata = info.get("extmetadata") or {}
+            title = page.get("title") or "Wikimedia Commons — panorama 360°"
+            title = title.removeprefix("File:").strip()
+
+            description = _clean_commons_text(
+                _commons_metadata_value(metadata, "ImageDescription"),
+                "Panorama 360° equiretangular encontrado na Wikimedia Commons.",
+            )
+            author = _clean_commons_text(
+                _commons_metadata_value(metadata, "Artist"),
+                "Wikimedia Commons",
+            )
+            license_name = _clean_commons_text(
+                _commons_metadata_value(metadata, "LicenseShortName"),
+                "Licença indicada na página original",
+            )
+            license_url = _commons_metadata_value(metadata, "LicenseUrl")
+
+            lower_title = title.lower()
+            lower_category = category.lower()
+            tags = ["Wikimedia Commons", "360", "panorama", "equiretangular"]
+
+            if "mars" in lower_title or "mars" in lower_category:
+                tags.extend(["Marte", "espaço"])
+            if any(word in lower_title for word in ("museum", "museu", "gallery", "biblioteca", "cathedral", "church", "castle")):
+                tags.extend(["museu", "patrimônio histórico"])
+            if any(word in lower_title for word in ("park", "forest", "lake", "mountain", "nature")):
+                tags.append("natureza")
+
+            item_id = f"wikimedia-360-{page.get('pageid')}"
+            candidates.append({
+                "id": item_id,
+                "title": title,
+                "type": "panorama360",
+                "source": "Wikimedia Commons",
+                "image": scaled,
+                "panorama": scaled,
+                "original": description_url,
+                "description": description,
+                "author": author,
+                "license": license_name,
+                "license_url": license_url,
+                "tags": list(dict.fromkeys(tags)),
+                "metadata": {
+                    "source_key": "wikimedia",
+                    "commons_title": page.get("title"),
+                    "commons_page_id": page.get("pageid"),
+                    "original_file_url": original_url,
+                    "thumbnail_url": scaled,
+                    "width": width,
+                    "height": height,
+                    "mime": mime,
+                    "projection": "equirectangular",
+                    "projection_validation": "category + aspect-ratio",
+                    "delivery_width": 4096,
+                    "category": category,
+                },
+            })
+
+    # Mix the configured categories so the first test is not dominated by one
+    # subject. Keep the total deliberately small (3–5 items).
+    selected = []
+    positions = [0] * len(categories)
+    while len(selected) < max_items:
+        added = False
+        for index, category in enumerate(categories):
+            while positions[index] < len(candidates):
+                candidate = candidates[positions[index]]
+                positions[index] += 1
+                if candidate["metadata"]["category"] == category:
+                    if candidate["id"] not in {item["id"] for item in selected}:
+                        selected.append(candidate)
+                    added = True
+                    break
+            if len(selected) >= max_items:
+                break
+        if not added:
+            break
+
+    print(f"[WIKIMEDIA] 360° equiretangulares selecionados: {len(selected)}.")
+    return selected
+
+
+
 def merge_items(catalog, new_items):
     existing = {str(item.get("id")): item for item in catalog["items"]}
 
@@ -390,8 +583,13 @@ def run_cinema(config, catalog, limiter):
     else:
         print("[CINEMA] DPLA desativada.")
 
+    if sources.get("wikimedia") is True:
+        fetched.extend(fetch_wikimedia_360_items(limiter, config))
+    else:
+        print("[CINEMA] WIKIMEDIA 360° desativada.")
+
     # Fontes ainda sem adaptador: permanecem explicitamente desligadas.
-    for source_key in ("europeana", "nara", "wikimedia"):
+    for source_key in ("europeana", "nara"):
         if sources.get(source_key) is True:
             print(
                 f"[CINEMA] {source_key.upper()} está habilitada no config, "
