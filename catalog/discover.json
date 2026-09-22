@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "generated_at": "2026-09-22T18:00:19Z",
+  "version": 6,
+  "generated_at": "2026-09-22T19:51:05Z",
   "items": [
     {
       "id": "demo-egypt",
@@ -1584,15 +1584,190 @@
           "Gift of Mrs. Dexter J. Purinton"
         ]
       }
+    },
+    {
+      "id": "wikimedia-360-46701183",
+      "title": "Aldara parks.jpg",
+      "type": "panorama360",
+      "source": "Wikimedia Commons",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Aldara_parks.jpg/3840px-Aldara_parks.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "panorama": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Aldara_parks.jpg/3840px-Aldara_parks.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "original": "https://commons.wikimedia.org/wiki/File:Aldara_parks.jpg",
+      "description": "Aldaris park in Sarkandaugava neighbourhood of Riga",
+      "author": "U.Bardins",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "tags": [
+        "Wikimedia Commons",
+        "360",
+        "panorama",
+        "equiretangular",
+        "natureza"
+      ],
+      "metadata": {
+        "source_key": "wikimedia",
+        "commons_title": "File:Aldara parks.jpg",
+        "commons_page_id": 46701183,
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Aldara_parks.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Aldara_parks.jpg/3840px-Aldara_parks.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "width": 8000,
+        "height": 4000,
+        "mime": "image/jpeg",
+        "projection": "equirectangular",
+        "projection_validation": "category + aspect-ratio",
+        "delivery_width": 4096,
+        "category": "Category:360° panoramas with equirectangular projection"
+      }
+    },
+    {
+      "id": "wikimedia-360-40026727",
+      "title": "Soissons Cathedral Interior 360x180, Picardy, France - Diliff.jpg",
+      "type": "panorama360",
+      "source": "Wikimedia Commons",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Soissons_Cathedral_Interior_360x180%2C_Picardy%2C_France_-_Diliff.jpg/3840px-Soissons_Cathedral_Interior_360x180%2C_Picardy%2C_France_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "panorama": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Soissons_Cathedral_Interior_360x180%2C_Picardy%2C_France_-_Diliff.jpg/3840px-Soissons_Cathedral_Interior_360x180%2C_Picardy%2C_France_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "original": "https://commons.wikimedia.org/wiki/File:Soissons_Cathedral_Interior_360x180,_Picardy,_France_-_Diliff.jpg",
+      "description": "A 360x180 degree equirectangular panorama of the interior of Soissons Cathedral in Picardy, France.",
+      "author": "Diliff",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "tags": [
+        "Wikimedia Commons",
+        "360",
+        "panorama",
+        "equiretangular",
+        "museu",
+        "patrimônio histórico"
+      ],
+      "metadata": {
+        "source_key": "wikimedia",
+        "commons_title": "File:Soissons Cathedral Interior 360x180, Picardy, France - Diliff.jpg",
+        "commons_page_id": 40026727,
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Soissons_Cathedral_Interior_360x180%2C_Picardy%2C_France_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Soissons_Cathedral_Interior_360x180%2C_Picardy%2C_France_-_Diliff.jpg/3840px-Soissons_Cathedral_Interior_360x180%2C_Picardy%2C_France_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "width": 13632,
+        "height": 6816,
+        "mime": "image/jpeg",
+        "projection": "equirectangular",
+        "projection_validation": "category + aspect-ratio",
+        "delivery_width": 4096,
+        "category": "Category:360° panoramas with equirectangular projection"
+      }
+    },
+    {
+      "id": "wikimedia-360-40024840",
+      "title": "Laon Cathedral Interior 360x180, Picardy, France - Diliff.jpg",
+      "type": "panorama360",
+      "source": "Wikimedia Commons",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Laon_Cathedral_Interior_360x180%2C_Picardy%2C_France_-_Diliff.jpg/3840px-Laon_Cathedral_Interior_360x180%2C_Picardy%2C_France_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "panorama": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Laon_Cathedral_Interior_360x180%2C_Picardy%2C_France_-_Diliff.jpg/3840px-Laon_Cathedral_Interior_360x180%2C_Picardy%2C_France_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "original": "https://commons.wikimedia.org/wiki/File:Laon_Cathedral_Interior_360x180,_Picardy,_France_-_Diliff.jpg",
+      "description": "A 360x180 degree equirectangular panorama of the interior of Laon Cathedral in Picardy, France.",
+      "author": "Diliff",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "tags": [
+        "Wikimedia Commons",
+        "360",
+        "panorama",
+        "equiretangular",
+        "museu",
+        "patrimônio histórico"
+      ],
+      "metadata": {
+        "source_key": "wikimedia",
+        "commons_title": "File:Laon Cathedral Interior 360x180, Picardy, France - Diliff.jpg",
+        "commons_page_id": 40024840,
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Laon_Cathedral_Interior_360x180%2C_Picardy%2C_France_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Laon_Cathedral_Interior_360x180%2C_Picardy%2C_France_-_Diliff.jpg/3840px-Laon_Cathedral_Interior_360x180%2C_Picardy%2C_France_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "width": 13644,
+        "height": 6822,
+        "mime": "image/jpeg",
+        "projection": "equirectangular",
+        "projection_validation": "category + aspect-ratio",
+        "delivery_width": 4096,
+        "category": "Category:360° panoramas with equirectangular projection"
+      }
+    },
+    {
+      "id": "wikimedia-360-146814030",
+      "title": "360˚ View- Crater in Western Arabia Terra with Stair-Stepped Hills and Dark Dunes (32974048184).jpg",
+      "type": "panorama360",
+      "source": "Wikimedia Commons",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_%2832974048184%29.jpg/3840px-360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_%2832974048184%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "panorama": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_%2832974048184%29.jpg/3840px-360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_%2832974048184%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "original": "https://commons.wikimedia.org/wiki/File:360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_(32974048184).jpg",
+      "description": "Created using NASA/HiRISE Digital Terrain Model and Orthoimagery data in Autodesk Maya, Adobe Photoshop, gdal, and ffmpeg. 360˚ Video: www.youtube.com/watch?v=cR_E-AF3lsQ Data Credit: NASA/JPL/University of Arizona/USGS Data Sources: https://www.uahirise.org/dtm/dtm.php?ID=PSP_002047_1890",
+      "author": "Kevin M. Gill",
+      "license": "Public domain",
+      "license_url": "",
+      "tags": [
+        "Wikimedia Commons",
+        "360",
+        "panorama",
+        "equiretangular",
+        "Marte",
+        "espaço"
+      ],
+      "metadata": {
+        "source_key": "wikimedia",
+        "commons_title": "File:360˚ View- Crater in Western Arabia Terra with Stair-Stepped Hills and Dark Dunes (32974048184).jpg",
+        "commons_page_id": 146814030,
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_%2832974048184%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_%2832974048184%29.jpg/3840px-360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_%2832974048184%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "width": 8192,
+        "height": 4096,
+        "mime": "image/jpeg",
+        "projection": "equirectangular",
+        "projection_validation": "category + aspect-ratio",
+        "delivery_width": 4096,
+        "category": "Category:360° panoramas of Mars"
+      }
+    },
+    {
+      "id": "wikimedia-360-146813983",
+      "title": "360˚ Projected Image- Domoni Crater (34328838116).jpg",
+      "type": "panorama360",
+      "source": "Wikimedia Commons",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/360%CB%9A_Projected_Image-_Domoni_Crater_%2834328838116%29.jpg/3840px-360%CB%9A_Projected_Image-_Domoni_Crater_%2834328838116%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "panorama": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/360%CB%9A_Projected_Image-_Domoni_Crater_%2834328838116%29.jpg/3840px-360%CB%9A_Projected_Image-_Domoni_Crater_%2834328838116%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "original": "https://commons.wikimedia.org/wiki/File:360%CB%9A_Projected_Image-_Domoni_Crater_(34328838116).jpg",
+      "description": "360˚ Projected Image: Domoni Crater",
+      "author": "Kevin M. Gill",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "tags": [
+        "Wikimedia Commons",
+        "360",
+        "panorama",
+        "equiretangular",
+        "Marte",
+        "espaço"
+      ],
+      "metadata": {
+        "source_key": "wikimedia",
+        "commons_title": "File:360˚ Projected Image- Domoni Crater (34328838116).jpg",
+        "commons_page_id": 146813983,
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/360%CB%9A_Projected_Image-_Domoni_Crater_%2834328838116%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/360%CB%9A_Projected_Image-_Domoni_Crater_%2834328838116%29.jpg/3840px-360%CB%9A_Projected_Image-_Domoni_Crater_%2834328838116%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "width": 8192,
+        "height": 4096,
+        "mime": "image/jpeg",
+        "projection": "equirectangular",
+        "projection_validation": "category + aspect-ratio",
+        "delivery_width": 4096,
+        "category": "Category:360° panoramas of Mars"
+      }
     }
   ],
   "pipeline": {
     "mode": "cinema",
     "sources_enabled": [
       "nasa",
-      "dpla"
+      "dpla",
+      "wikimedia"
     ],
-    "requests_this_run": 2,
-    "daily_requests": 4
+    "requests_this_run": 4,
+    "daily_requests": 8
   }
 }
