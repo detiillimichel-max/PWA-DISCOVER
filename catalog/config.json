@@ -21,7 +21,7 @@
   "api_backoff_seconds": 10,
   "sources": {
     "nasa": true,
-    "dpla": false,
+    "dpla": true,
     "europeana": false,
     "nara": false,
     "wikimedia": false
