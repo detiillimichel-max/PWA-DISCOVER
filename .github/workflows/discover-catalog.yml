@@ -1,0 +1,30 @@
+name: DISCOVER • Atualizar catálogo
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */12 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: discover-catalog-refresh
+  cancel-in-progress: true
+
+jobs:
+  validate-catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v7
+
+      - name: Configurar Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Validar catálogo
+        run: python scripts/catalog_pipeline.py
