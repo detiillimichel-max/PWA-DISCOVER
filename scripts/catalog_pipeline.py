@@ -150,7 +150,7 @@ def fetch_nasa_items(limiter):
         "q": "Mars",
         "media_type": "image",
         "page": 1,
-        "page_size": 20,
+        "page_size": 30,
     })
     url = f"https://images-api.nasa.gov/search?{params}"
 
@@ -167,7 +167,7 @@ def fetch_nasa_items(limiter):
     results = collection.get("items") or []
     items = []
 
-    for result in results[:5]:
+    for result in results[:30]:
         data_items = result.get("data") or []
         metadata = data_items[0] if data_items else {}
         nasa_id = metadata.get("nasa_id")
@@ -235,6 +235,10 @@ def rotate_catalog(catalog, config):
 
     max_items = max(1, int(cinema.get("max_catalog_items", 80)))
     max_per_source = max(1, int(cinema.get("max_items_per_source", 20)))
+    source_limits = {
+        str(key): max(1, int(value))
+        for key, value in (cinema.get("source_item_limits") or {}).items()
+    }
     keep_local = bool(cinema.get("keep_local_items", True))
 
     unique = {}
@@ -265,7 +269,8 @@ def rotate_catalog(catalog, config):
             ),
             reverse=True,
         )
-        retained.extend(source_items[:max_per_source])
+        source_limit = source_limits.get(source_key, max_per_source)
+        retained.extend(source_items[:source_limit])
 
     if len(retained) > max_items:
         retained = retained[:max_items]
