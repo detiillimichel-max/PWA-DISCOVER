@@ -72,6 +72,49 @@
     </section>
   </main>
 
+  <div id="feed-viewer-modal" class="feed-viewer-modal" aria-hidden="true">
+    <div class="feed-viewer-top">
+      <div class="feed-viewer-title-wrap">
+        <p class="eyebrow">FEED • MODO CINEMA</p>
+        <h2 id="feed-viewer-title">DISCOVER</h2>
+      </div>
+      <button id="feed-viewer-close" class="feed-viewer-close" type="button" aria-label="Fechar Feed">×</button>
+    </div>
+
+    <div id="feed-viewer-media" class="feed-viewer-media">
+      <img id="feed-viewer-image" class="feed-viewer-image" alt="">
+      <div id="feed-viewer-panorama" class="feed-viewer-panorama" aria-label="Experiência 360°"></div>
+      <div class="feed-viewer-gradient" aria-hidden="true"></div>
+    </div>
+
+    <div id="feed-viewer-rail" class="feed-viewer-rail" aria-label="Ações da publicação">
+      <button class="feed-action feed-action-gyro" type="button" data-feed-action="gyro" aria-label="Modo giroscópio" title="Modo giroscópio">
+        <i data-lucide="compass" aria-hidden="true"></i>
+        <span>Giro</span>
+      </button>
+      <button class="feed-action feed-action-touch" type="button" data-feed-action="touch360" aria-label="Modo 360 com toque" title="Modo 360 com toque">
+        <i data-lucide="rotate-3d" aria-hidden="true"></i>
+        <span>360</span>
+      </button>
+      <button class="feed-action" type="button" data-feed-action="share" aria-label="Compartilhar" title="Compartilhar">
+        <i data-lucide="share-2" aria-hidden="true"></i>
+        <span>Compartilhar</span>
+      </button>
+      <button class="feed-action feed-action-like" type="button" data-feed-action="like" aria-label="Curtir" title="Curtir">
+        <i data-lucide="thumbs-up" aria-hidden="true"></i>
+        <span>Curtir</span>
+      </button>
+    </div>
+
+    <div class="feed-viewer-bottom">
+      <div>
+        <strong id="feed-viewer-caption">Descoberta</strong>
+        <span id="feed-viewer-source"></span>
+      </div>
+      <span id="feed-viewer-position" class="feed-viewer-position"></span>
+    </div>
+  </div>
+
   <div id="viewer-modal" class="viewer-modal" aria-hidden="true">
     <div class="viewer-header">
       <div>
