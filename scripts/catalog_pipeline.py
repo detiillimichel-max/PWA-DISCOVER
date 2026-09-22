@@ -382,14 +382,16 @@ def run_cinema(config, catalog, limiter):
 
     if sources.get("nasa") is True:
         fetched.extend(fetch_nasa_items(limiter))
+    else:
+        print("[CINEMA] NASA desativada.")
 
     if sources.get("dpla") is True:
         fetched.extend(fetch_dpla_items(limiter))
     else:
-        print("[CINEMA] NASA desativada.")
+        print("[CINEMA] DPLA desativada.")
 
-    # Europeana, NARA e Wikimedia permanecem desligadas até seus\n    # adaptadores oficiais serem implementados.
-    for source_key in ("dpla", "europeana", "nara", "wikimedia"):
+    # Fontes ainda sem adaptador: permanecem explicitamente desligadas.
+    for source_key in ("europeana", "nara", "wikimedia"):
         if sources.get(source_key) is True:
             print(
                 f"[CINEMA] {source_key.upper()} está habilitada no config, "
