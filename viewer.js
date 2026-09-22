@@ -43,11 +43,22 @@ async function openViewer(item) {
     ? `Fonte: ${escapeHtml(item.source || "origem externa")} • <a href="${escapeAttribute(item.original)}" target="_blank" rel="noopener noreferrer">Ver original ↗</a>`
     : `Fonte: ${escapeHtml(item.source || "origem externa")}`;
 
-  container.innerHTML = "";
+  container.innerHTML = `
+    <div class="viewer-loading">Carregando experiência 360°…</div>
+  `;
   gyroButton.hidden = false;
   gyroButton.disabled = false;
   gyroButton.classList.remove("is-active");
   gyroButton.querySelector("span").textContent = "Giro";
+
+  // O modal acabou de ficar visível. Esperamos um frame para o navegador
+  // calcular a área real do container antes de criar o WebGL.
+  await new Promise(requestAnimationFrame);
+  await new Promise(requestAnimationFrame);
+
+  if (!modal.classList.contains("is-open")) return;
+
+  container.innerHTML = "";
 
   try {
     viewer = new Viewer({
@@ -55,6 +66,7 @@ async function openViewer(item) {
       panorama: item.panorama,
       caption: item.title || "Panorama 360°",
       loadingTxt: "Carregando panorama…",
+      canvasBackground: "#000",
       mousemove: true,
       mousewheel: true,
       touchmoveTwoFingers: false,
@@ -74,6 +86,11 @@ async function openViewer(item) {
     });
 
     viewer.addEventListener("ready", () => {
+      // Garante que o renderer use o tamanho final do modal.
+      viewer.resize({
+        width: container.clientWidth,
+        height: container.clientHeight
+      });
       gyroButton.title = "Ativar giroscópio";
       renderIcons();
     }, { once: true });
