@@ -9,7 +9,9 @@ const CONFIG = Object.freeze({
 });
 
 let catalog = [];
-let activeFilter = "all";
+let activeView = "discover";
+let carouselIndex = 0;
+let feedIndex = 0;
 
 const $ = (selector) => document.querySelector(selector);
 
@@ -87,9 +89,96 @@ function renderIcons() {
 
 function filteredCatalog(term = $("#search").value) {
   const base = term.trim() ? searchCatalog(term) : catalog;
-  if (activeFilter === "360") return base.filter(item => item.type === "panorama360");
-  if (activeFilter === "normal") return base.filter(item => item.type !== "panorama360");
+  if (activeView === "360") return base.filter(item => item.type === "panorama360");
+  if (activeView === "normal") return base.filter(item => item.type !== "panorama360");
   return base;
+}
+
+function renderCard(item, options = {}) {
+  const feed = options.feed ? " feed-card" : "";
+  return `
+    <article class="card${feed}">
+      <div class="card-media">
+        <img
+          src="${escapeHtml(item.image || "")}"
+          alt=""
+          loading="lazy"
+          referrerpolicy="no-referrer"
+          onerror="this.style.display='none';this.parentElement.classList.add('media-fallback')"
+        >
+        <div class="media-fallback-icon" aria-hidden="true"><i data-lucide="image-off"></i></div>
+      </div>
+      <div class="card-body">
+        <h3>${escapeHtml(item.title)}</h3>
+        <p>${escapeHtml(item.description || "")}</p>
+        <span class="tag">${escapeHtml(item.type || "discover")}</span>
+        <span class="tag">${escapeHtml(item.source || "catálogo local")}</span>
+        ${item.type === "panorama360" && item.panorama ? `
+          <button class="panorama-button" type="button" data-panorama-id="${escapeHtml(item.id)}"><i data-lucide="rotate-3d" aria-hidden="true"></i> Abrir experiência 360°</button>
+        ` : ""}
+        ${options.feed ? `
+          <button class="share-button" type="button" data-share-id="${escapeHtml(item.id)}"><i data-lucide="share-2" aria-hidden="true"></i> Compartilhar</button>
+        ` : ""}
+      </div>
+    </article>
+  `;
+}
+
+function renderDiscoverCarousel(items) {
+  const grid = $("#discover-grid");
+  if (!items.length) {
+    grid.innerHTML = `<div class="empty">Nenhuma descoberta disponível no momento.</div>`;
+    renderIcons();
+    return;
+  }
+
+  carouselIndex = Math.max(0, Math.min(carouselIndex, items.length - 1));
+  grid.innerHTML = renderCard(items[carouselIndex]);
+  $("#discover-prev").disabled = carouselIndex === 0;
+  $("#discover-next").disabled = carouselIndex === items.length - 1;
+  renderIcons();
+}
+
+function renderGrid(items) {
+  const grid = $("#discover-grid");
+  if (!items.length) {
+    grid.innerHTML = `
+      <div class="empty">
+        Nenhum resultado para “${escapeHtml($("#search").value.trim())}”.<br>
+        <small>A busca consulta somente o catálogo local.</small>
+      </div>
+    `;
+    renderIcons();
+    return;
+  }
+  grid.innerHTML = items.map(item => renderCard(item)).join("");
+  renderIcons();
+}
+
+function renderFeed(items) {
+  const grid = $("#discover-grid");
+  if (!items.length) {
+    grid.innerHTML = `<div class="empty">O feed não encontrou cards.</div>`;
+    renderIcons();
+    return;
+  }
+
+  feedIndex = Math.max(0, Math.min(feedIndex, items.length - 1));
+  grid.innerHTML = `
+    <div class="feed-counter">${feedIndex + 1} / ${items.length}</div>
+    ${renderCard(items[feedIndex], { feed: true })}
+    <div class="feed-controls">
+      <button class="carousel-arrow" type="button" data-feed-dir="-1" aria-label="Card anterior"><i data-lucide="chevron-up" aria-hidden="true"></i></button>
+      <button class="carousel-arrow" type="button" data-feed-dir="1" aria-label="Próximo card"><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+    </div>
+  `;
+  renderIcons();
+}
+
+function updateDiscoverView(items) {
+  if (activeView === "discover") renderDiscoverCarousel(items);
+  else if (activeView === "feed") renderFeed(items);
+  else renderGrid(items);
 }
 
 function renderPanoramaShowcase() {
@@ -116,59 +205,20 @@ function renderPanoramaShowcase() {
 }
 
 function render(items) {
-  const grid = $("#discover-grid");
   const term = $("#search").value.trim();
-
-  $("#result-count").textContent =
-    `${items.length} ${items.length === 1 ? "item" : "itens"}`;
+  $("#result-count").textContent = `${items.length} ${items.length === 1 ? "item" : "itens"}`;
 
   if (term) {
-    $("#catalog-status").textContent =
-      `Busca local • ${items.length} ${items.length === 1 ? "resultado" : "resultados"}`;
+    $("#catalog-status").textContent = `Busca local • ${items.length} ${items.length === 1 ? "resultado" : "resultados"}`;
   } else {
-    $("#catalog-status").textContent =
-      `${catalog.length} itens no catálogo local • sem consulta externa`;
+    $("#catalog-status").textContent = `${catalog.length} itens no catálogo local • sem consulta externa`;
   }
 
-  if (!items.length) {
-    grid.innerHTML = `
-      <div class="empty">
-        Nenhum resultado para “${escapeHtml(term)}”.<br>
-        <small>A busca consulta somente o catálogo local.</small>
-      </div>
-    `;
-    return;
-  }
-
-  grid.innerHTML = items.map(item => `
-    <article class="card">
-      <div class="card-media">
-        <img
-          src="${escapeHtml(item.image || "")}"
-          alt=""
-          loading="lazy"
-          referrerpolicy="no-referrer"
-        >
-      </div>
-      <div class="card-body">
-        <h3>${escapeHtml(item.title)}</h3>
-        <p>${escapeHtml(item.description || "")}</p>
-        <span class="tag">${escapeHtml(item.type || "discover")}</span>
-        <span class="tag">${escapeHtml(item.source || "catálogo local")}</span>
-        ${item.type === "panorama360" && item.panorama ? `
-          <button
-            class="panorama-button"
-            type="button"
-            data-panorama-id="${escapeHtml(item.id)}"
-          ><i data-lucide="rotate-3d" aria-hidden="true"></i> Abrir experiência 360°</button>
-        ` : ""}
-      </div>
-    </article>
-  `).join("");
+  updateDiscoverView(items);
+  $("#panorama-section").hidden = activeView !== "discover" || !catalog.some(item => item.type === "panorama360" && item.panorama);
+  if (activeView === "discover") renderPanoramaShowcase();
   renderIcons();
-  renderPanoramaShowcase();
 }
-
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, char => ({
     "&": "&amp;",
@@ -328,38 +378,107 @@ $("#search").addEventListener("input", event => {
   render(filteredCatalog(term));
 });
 
-$("#discover-grid").addEventListener("click", event => {
-  const button = event.target.closest(".panorama-button");
-  if (!button) return;
+$("#discover-grid").addEventListener("click", async event => {
+  const panoramaButton = event.target.closest(".panorama-button");
+  if (panoramaButton) {
+    const item = catalog.find(entry => entry.id === panoramaButton.dataset.panoramaId);
+    if (item && window.DISCOVER360?.open) window.DISCOVER360.open(item);
+    return;
+  }
 
-  const item = catalog.find(entry => entry.id === button.dataset.panoramaId);
-  if (item && window.DISCOVER360?.open) {
-    window.DISCOVER360.open(item);
+  const shareButton = event.target.closest(".share-button");
+  if (shareButton) {
+    const item = catalog.find(entry => entry.id === shareButton.dataset.shareId);
+    if (!item) return;
+
+    const shareData = {
+      title: item.title || "DISCOVER",
+      text: item.description || "Descoberta no DISCOVER",
+      url: item.original || window.location.href
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(shareData.url);
+        shareButton.innerHTML = '<i data-lucide="check" aria-hidden="true"></i> Link copiado';
+        renderIcons();
+      }
+    } catch (error) {
+      if (error?.name !== "AbortError") console.error(error);
+    }
+    return;
+  }
+
+  const carouselButton = event.target.closest(".carousel-arrow");
+  if (carouselButton && activeView === "discover") {
+    const items = filteredCatalog($("#search").value);
+    carouselIndex = Math.max(0, Math.min(carouselIndex + Number(carouselButton.dataset.carouselDir || 0), items.length - 1));
+    render(items);
+    return;
+  }
+
+  const feedButton = event.target.closest("[data-feed-dir]");
+  if (feedButton && activeView === "feed") {
+    const items = filteredCatalog($("#search").value);
+    feedIndex = Math.max(0, Math.min(feedIndex + Number(feedButton.dataset.feedDir || 0), items.length - 1));
+    render(items);
   }
 });
 
-
 document.querySelectorAll(".library-action").forEach(button => {
   button.addEventListener("click", () => {
-    activeFilter = button.dataset.filter || "all";
+    activeView = button.dataset.view || "discover";
+    carouselIndex = 0;
+    feedIndex = 0;
+
     document.querySelectorAll(".library-action").forEach(item => {
       item.classList.toggle("is-active", item === button);
     });
+
     $("#search").value = "";
     render(filteredCatalog(""));
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
 
+$("#discover-prev")?.addEventListener("click", () => {
+  const items = filteredCatalog($("#search").value);
+  carouselIndex = Math.max(0, carouselIndex - 1);
+  render(items);
+});
+
+$("#discover-next")?.addEventListener("click", () => {
+  const items = filteredCatalog($("#search").value);
+  carouselIndex = Math.min(items.length - 1, carouselIndex + 1);
+  render(items);
+});
+
+$("#search").addEventListener("input", event => {
+  const term = event.target.value;
+  const cached = readSearchCache(term);
+  const results = cached || searchCatalog(term);
+
+  if (!cached) writeSearchCache(term, results);
+  carouselIndex = 0;
+  feedIndex = 0;
+  render(results.filter(item => {
+    if (activeView === "360") return item.type === "panorama360";
+    if (activeView === "normal") return item.type !== "panorama360";
+    return true;
+  }));
+});
+
 $("#show-all-360")?.addEventListener("click", () => {
-  activeFilter = "360";
+  activeView = "360";
   document.querySelectorAll(".library-action").forEach(button => {
-    button.classList.toggle("is-active", button.dataset.filter === "360");
+    button.classList.toggle("is-active", button.dataset.view === "360");
   });
   $("#search").value = "";
   render(filteredCatalog(""));
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
-
 loadCatalog();
 
 if ("serviceWorker" in navigator) {
