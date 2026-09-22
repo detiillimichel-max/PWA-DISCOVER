@@ -104,6 +104,7 @@ function renderCard(item, options = {}) {
           alt=""
           loading="lazy"
           referrerpolicy="no-referrer"
+          ${options.feed ? `class="feed-open-image" data-feed-id="${escapeHtml(item.id)}"` : ""}
           onerror="this.style.display='none';this.parentElement.classList.add('media-fallback')"
         >
         <div class="media-fallback-icon" aria-hidden="true"><i data-lucide="image-off"></i></div>
@@ -374,6 +375,18 @@ $("#discover-grid").addEventListener("click", async event => {
   if (panoramaButton) {
     const item = catalog.find(entry => entry.id === panoramaButton.dataset.panoramaId);
     if (item && window.DISCOVER360?.open) window.DISCOVER360.open(item);
+    return;
+  }
+
+  const feedImage = event.target.closest(".feed-open-image");
+  if (feedImage) {
+    const item = catalog.find(entry => entry.id === feedImage.dataset.feedId);
+    if (item && window.DISCOVER360?.openFeed) {
+      window.DISCOVER360.openFeed(item, {
+        index: catalog.findIndex(entry => entry.id === item.id),
+        total: catalog.length
+      });
+    }
     return;
   }
 
