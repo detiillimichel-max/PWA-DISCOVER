@@ -1,10 +1,10 @@
 const CONFIG = Object.freeze({
   CATALOG_URL: "./catalog/discover.json",
-  CATALOG_CACHE_NAME: "discover-catalog-v3",
+  CATALOG_CACHE_NAME: "discover-catalog-v4",
   CATALOG_CACHE_TTL_HOURS: 24,
-  CATALOG_CACHE_META_KEY: "discover-catalog-cache-meta-v2",
+  CATALOG_CACHE_META_KEY: "discover-catalog-cache-meta-v3",
   SEARCH_CACHE_TTL_HOURS: 6,
-  SEARCH_CACHE_PREFIX: "discover-search-v2:",
+  SEARCH_CACHE_PREFIX: "discover-search-v3:",
   SEARCH_FIELDS: ["title", "description", "type", "source", "tags"]
 });
 
