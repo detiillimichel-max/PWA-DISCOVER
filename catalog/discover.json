@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "generated_at": "2026-09-22T16:48:08Z",
+  "version": 4,
+  "generated_at": "2026-09-22T17:39:23Z",
   "items": [
     {
       "id": "demo-egypt",
@@ -57,6 +57,131 @@
         "Mercantour",
         "experiência visual"
       ]
+    },
+    {
+      "id": "nasa-library-NHQ201906010007",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201906010007/NHQ201906010007~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201906010007",
+      "description": "The Mars celebration Saturday, June 1, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201906010007",
+        "center": "HQ",
+        "date_created": "2019-06-01T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310038",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310038/NHQ201905310038~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310038",
+      "description": "The Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310038",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310037",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310037/NHQ201905310037~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310037",
+      "description": "The Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310037",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310034",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310034/NHQ201905310034~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310034",
+      "description": "The Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310034",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310033",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310033/NHQ201905310033~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310033",
+      "description": "The Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310033",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
     }
   ],
   "pipeline": {
@@ -65,6 +190,6 @@
       "nasa"
     ],
     "requests_this_run": 1,
-    "daily_requests": 1
+    "daily_requests": 2
   }
 }
