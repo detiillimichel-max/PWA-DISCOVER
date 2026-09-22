@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0d12">
   <meta name="description" content="DISCOVER — catálogo visual de imagens, cultura, história e experiências 360°.">
-  <link rel="manifest" href="manifest.json?v=11">
-  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=11">
+  <link rel="manifest" href="manifest.json?v=12">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=12">
   <link rel="apple-touch-icon" href="icon-192.png?v=11">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.15.1/index.css">
-  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="style.css?v=12">
   <title>DISCOVER</title>
 </head>
 <body>
@@ -123,7 +123,12 @@
         <p id="viewer-eyebrow" class="eyebrow">EXPERIÊNCIA 360°</p>
         <h2 id="viewer-title">Panorama</h2>
       </div>
-      <button id="viewer-close" class="viewer-close" type="button" aria-label="Fechar visualizador">×</button>
+      <div class="viewer-header-actions">
+        <button id="viewer-gyro" class="viewer-gyro" type="button" aria-label="Ativar giroscópio" title="Ativar giroscópio">
+          <i data-lucide="compass" aria-hidden="true"></i><span>Giro</span>
+        </button>
+        <button id="viewer-close" class="viewer-close" type="button" aria-label="Fechar visualizador">×</button>
+      </div>
     </div>
     <div id="viewer" class="viewer" aria-label="Visualizador de panorama 360 graus"></div>
     <div id="viewer-info" class="viewer-info"></div>
@@ -143,8 +148,8 @@
       }
     }
   </script>
-  <script type="module" src="viewer.js?v=9"></script>
+  <script type="module" src="viewer.js?v=10"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
-  <script src="app.js?v=11" defer></script>
+  <script src="app.js?v=12" defer></script>
 </body>
 </html>
