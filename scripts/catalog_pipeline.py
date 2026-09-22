@@ -218,6 +218,100 @@ def fetch_nasa_items(limiter):
     print(f"[NASA] Image Library: {len(items)} imagens selecionadas.")
     return items
 
+def fetch_dpla_items(limiter):
+    api_key = os.getenv("DPLA_API_KEY")
+    if not api_key:
+        print("[DPLA] DPLA_API_KEY não configurada; fonte ignorada.")
+        return []
+
+    params = urlencode({
+        "q": "photograph",
+        "sourceResource.type": "image",
+        "page": 1,
+        "page_size": 20,
+        "api_key": api_key,
+    })
+    url = f"https://api.dp.la/v2/items?{params}"
+
+    try:
+        data = limiter.get_json(url)
+    except DailyLimitReached as exc:
+        print(f"[DPLA] {exc}; fonte interrompida com segurança.")
+        return []
+    except Exception as exc:
+        print(f"[DPLA] Consulta não incorporada: {exc}")
+        return []
+
+    items = []
+    for record in (data.get("docs") or [])[:20]:
+        dpla_id = record.get("id")
+        source = record.get("sourceResource") or {}
+        if not dpla_id:
+            continue
+
+        preview = record.get("object")
+        if isinstance(preview, dict):
+            preview = preview.get("@id") or preview.get("id")
+        if not preview:
+            has_view = record.get("hasView")
+            if isinstance(has_view, dict):
+                preview = has_view.get("@id")
+            elif isinstance(has_view, list) and has_view:
+                first_view = has_view[0]
+                if isinstance(first_view, dict):
+                    preview = first_view.get("@id")
+
+        original = record.get("isShownAt") or record.get("@id") or preview
+        if not preview:
+            continue
+
+        title = source.get("title") or f"DPLA — {dpla_id}"
+        description = source.get("description") or (
+            "Imagem de patrimônio cultural digitalizada e indexada pela DPLA."
+        )
+        creator = source.get("creator")
+        if isinstance(creator, list):
+            creator = ", ".join(
+                str(value.get("name") if isinstance(value, dict) else value)
+                for value in creator
+            )
+
+        subjects = source.get("subject") or []
+        tags = []
+        for subject in subjects if isinstance(subjects, list) else [subjects]:
+            if isinstance(subject, dict):
+                value = subject.get("name")
+            else:
+                value = subject
+            if value:
+                tags.append(str(value))
+
+        items.append({
+            "id": f"dpla-{dpla_id}",
+            "title": title,
+            "type": "image",
+            "source": "Digital Public Library of America",
+            "image": preview,
+            "original": original,
+            "description": description,
+            "author": creator or record.get("dataProvider") or "DPLA",
+            "tags": ["DPLA", "patrimônio", "fotografia", *tags[:6]],
+            "metadata": {
+                "source_key": "dpla",
+                "dpla_id": dpla_id,
+                "data_provider": record.get("dataProvider"),
+                "provider": (
+                    (record.get("provider") or {}).get("name")
+                    if isinstance(record.get("provider"), dict)
+                    else record.get("provider")
+                ),
+                "rights": source.get("rights") or record.get("rights"),
+            },
+        })
+
+    print(f"[DPLA] Imagens selecionadas: {len(items)}.")
+    return items
+
 
 def merge_items(catalog, new_items):
     existing = {str(item.get("id")): item for item in catalog["items"]}
@@ -288,11 +382,13 @@ def run_cinema(config, catalog, limiter):
 
     if sources.get("nasa") is True:
         fetched.extend(fetch_nasa_items(limiter))
+
+    if sources.get("dpla") is True:
+        fetched.extend(fetch_dpla_items(limiter))
     else:
         print("[CINEMA] NASA desativada.")
 
-    # DPLA, Europeana e NARA permanecem desligadas até seus
-    # adaptadores oficiais serem implementados no Commit 8.
+    # Europeana, NARA e Wikimedia permanecem desligadas até seus\n    # adaptadores oficiais serem implementados.
     for source_key in ("dpla", "europeana", "nara", "wikimedia"):
         if sources.get(source_key) is True:
             print(
