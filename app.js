@@ -176,6 +176,9 @@ function renderFeed(items) {
 
 function renderFeedSlide(item, index, total) {
   const is360 = item.type === "panorama360" && item.panorama;
+  const preserveFrame = /\b(marte|lua|moon|planet)\b/i.test(
+    [item.title, item.description, ...(item.tags || [])].join(" ")
+  );
   return `
     <article class="feed-slide" data-feed-slide-id="${escapeHtml(item.id)}">
       <div class="feed-slide-media">
@@ -184,7 +187,7 @@ function renderFeedSlide(item, index, total) {
           alt="${escapeHtml(item.title || "Imagem DISCOVER")}"
           loading="${index < 2 ? "eager" : "lazy"}"
           referrerpolicy="no-referrer"
-          class="feed-slide-image feed-open-image"
+          class="feed-slide-image feed-open-image${preserveFrame ? " feed-slide-image--contain" : ""}"
           data-feed-id="${escapeHtml(item.id)}"
           onerror="this.style.display='none';this.parentElement.classList.add('media-fallback')"
         >
