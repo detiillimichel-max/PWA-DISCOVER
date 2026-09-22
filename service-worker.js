@@ -1,4 +1,4 @@
-const VERSION = "v14";
+const VERSION = "v15";
 const CACHE = `discover-shell-${VERSION}`;
 const CATALOG_CACHE = "discover-catalog-v5";
 
