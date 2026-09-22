@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "generated_at": "2026-09-22T17:39:23Z",
+  "version": 5,
+  "generated_at": "2026-09-22T18:00:19Z",
   "items": [
     {
       "id": "demo-egypt",
@@ -59,6 +59,184 @@
       ]
     },
     {
+      "id": "nasa-library-NHQ201906010019",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201906010019/NHQ201906010019~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201906010019",
+      "description": "A participant of the Mars celebration launches a rocket, Saturday, June 1, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201906010019",
+        "center": "HQ",
+        "date_created": "2019-06-01T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201906010018",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201906010018/NHQ201906010018~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201906010018",
+      "description": "A participant of the Mars celebration launches a rocket, Saturday, June 1, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201906010018",
+        "center": "HQ",
+        "date_created": "2019-06-01T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201906010016",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201906010016/NHQ201906010016~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201906010016",
+      "description": "NASA Chief Technologist Douglas Terrier talks about NASA's plans for going forward to the Moon and Mars during a Mars celebration Saturday, June 1, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Douglas Terrier",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201906010016",
+        "center": "HQ",
+        "date_created": "2019-06-01T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201906010013",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201906010013/NHQ201906010013~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201906010013",
+      "description": "NASA Chief Technologist Douglas Terrier talks about NASA's plans for going forward to the Moon and Mars during a Mars celebration Saturday, June 1, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Douglas Terrier",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201906010013",
+        "center": "HQ",
+        "date_created": "2019-06-01T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201906010010",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201906010010/NHQ201906010010~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201906010010",
+      "description": "Sophia Bogat from NASA Headquarters talks about the various wheels used on Mars rovers during the Mars celebration Saturday, June 1, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania",
+        "Sophia Bogat"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201906010010",
+        "center": "HQ",
+        "date_created": "2019-06-01T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201906010009",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201906010009/NHQ201906010009~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201906010009",
+      "description": "A young couple stop by the Mars celebration prior to attending prom, Saturday, June 1, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201906010009",
+        "center": "HQ",
+        "date_created": "2019-06-01T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201906010008",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201906010008/NHQ201906010008~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201906010008",
+      "description": "The Mars celebration Saturday, June 1, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201906010008",
+        "center": "HQ",
+        "date_created": "2019-06-01T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
       "id": "nasa-library-NHQ201906010007",
       "title": "Mars Celebration",
       "type": "space",
@@ -80,6 +258,283 @@
         "nasa_id": "NHQ201906010007",
         "center": "HQ",
         "date_created": "2019-06-01T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201906010006",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201906010006/NHQ201906010006~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201906010006",
+      "description": "A Mars celebration attendee views the surface of Mars via a virtual reality headset Saturday, June 1, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201906010006",
+        "center": "HQ",
+        "date_created": "2019-06-01T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201906010004",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201906010004/NHQ201906010004~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201906010004",
+      "description": "The Mars celebration Saturday, June 1, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201906010004",
+        "center": "HQ",
+        "date_created": "2019-06-01T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201906010002",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201906010002/NHQ201906010002~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201906010002",
+      "description": "An alien themed cup cake is seen during the Mars celebration Saturday, June 1, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars  Brew House",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201906010002",
+        "center": "HQ",
+        "date_created": "2019-06-01T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201906010001",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201906010001/NHQ201906010001~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201906010001",
+      "description": "A mural inside the Mars Brew House is seen during the Mars celebration Saturday, June 1, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars  Brew House",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201906010001",
+        "center": "HQ",
+        "date_created": "2019-06-01T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310045",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310045/NHQ201905310045~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310045",
+      "description": "The Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310045",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310044",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310044/NHQ201905310044~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310044",
+      "description": "The Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310044",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310043",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310043/NHQ201905310043~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310043",
+      "description": "The Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310043",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310042",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310042/NHQ201905310042~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310042",
+      "description": "The Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310042",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310041",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310041/NHQ201905310041~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310041",
+      "description": "The Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310041",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310040",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310040/NHQ201905310040~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310040",
+      "description": "The Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310040",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310039",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310039/NHQ201905310039~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310039",
+      "description": "The Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310039",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
         "media_type": "image"
       }
     },
@@ -134,6 +589,31 @@
       }
     },
     {
+      "id": "nasa-library-NHQ201905310035",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310035/NHQ201905310035~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310035",
+      "description": "The Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310035",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
       "id": "nasa-library-NHQ201905310034",
       "title": "Mars Celebration",
       "type": "space",
@@ -182,14 +662,937 @@
         "date_created": "2019-05-31T00:00:00Z",
         "media_type": "image"
       }
+    },
+    {
+      "id": "nasa-library-NHQ201905310030",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310030/NHQ201905310030~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310030",
+      "description": "Attendees view a 3D panorama of Mars during a Mars celebration event Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310030",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310029",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310029/NHQ201905310029~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310029",
+      "description": "NASA engineers discuss Mars exploration with attendees of a Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310029",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310028",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310028/NHQ201905310028~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310028",
+      "description": "NASA engineers discuss Mars exploration with attendees of a Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310028",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310026",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310026/NHQ201905310026~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310026",
+      "description": "The Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310026",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310025",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310025/NHQ201905310025~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310025",
+      "description": "Staff prepare for the Mars celebration event Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310025",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "nasa-library-NHQ201905310024",
+      "title": "Mars Celebration",
+      "type": "space",
+      "source": "NASA Image and Video Library",
+      "image": "https://images-assets.nasa.gov/image/NHQ201905310024/NHQ201905310024~thumb.jpg",
+      "original": "https://images.nasa.gov/details/NHQ201905310024",
+      "description": "The Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania. NASA is in the small town to celebrate Mars exploration and share the agency’s excitement about landing astronauts on the Moon in five years. The celebration includes a weekend of Science, Technology, Engineering, Arts and Mathematics (STEAM) activities. Photo Credit: (NASA/Bill Ingalls)",
+      "author": "NASA/Bill Ingalls",
+      "tags": [
+        "NASA",
+        "espaço",
+        "Marte",
+        "Mars",
+        "Mars Celebration",
+        "Pennsylvania"
+      ],
+      "metadata": {
+        "source_key": "nasa",
+        "nasa_id": "NHQ201905310024",
+        "center": "HQ",
+        "date_created": "2019-05-31T00:00:00Z",
+        "media_type": "image"
+      }
+    },
+    {
+      "id": "dpla-f00a118044ca5e9fcc7fe2c42c093046",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://thumbnails.calisphere.org/clip/150x150/449c1b82955d1730e65c9c0feea347a6",
+      "original": "https://freemason.pastperfectonline.com/photo/D53D7739-F94D-45CC-A185-427550380460",
+      "description": [
+        "Black and white photograph of banquet held, June 9, 1967 at Pavillion Henry IV, Paris, France given by Grand Master Ernest Van Hecke celebrating the Dedication of New Masonic Temple. Edward H. Siems, represented the Grand Lodge of California"
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/henry-w-coil-library-and-museum-of-freemasonry",
+        "name": "Henry W. Coil Library and Museum of Freemasonry"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "f00a118044ca5e9fcc7fe2c42c093046",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/henry-w-coil-library-and-museum-of-freemasonry",
+          "name": "Henry W. Coil Library and Museum of Freemasonry"
+        },
+        "provider": "California Digital Library",
+        "rights": [
+          "Please contact the contributing institution for more information regarding the copyright status of this object."
+        ]
+      }
+    },
+    {
+      "id": "dpla-ec74764fbab5d4544fc933d781a41d3f",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-39EBBED3FF912-000001",
+      "original": "http://n2t.net/ark:/65665/kq43e08562b-d755-4912-9cc3-a36a2e22f542",
+      "description": [
+        "Research in Progress"
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "ec74764fbab5d4544fc933d781a41d3f",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Allyn Cox"
+        ]
+      }
+    },
+    {
+      "id": "dpla-e8bd1caa4b3aa957c20b369c6020b665",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-3B30E0261E0F2-000001",
+      "original": "http://n2t.net/ark:/65665/kq409cc0b9e-8fe2-4b14-88bb-63621fd984b7",
+      "description": [
+        "Research in Progress"
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "e8bd1caa4b3aa957c20b369c6020b665",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Allyn Cox"
+        ]
+      }
+    },
+    {
+      "id": "dpla-ccdf980e8663b5e56d2793ec507191a7",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-F042908C8A6F2-000001",
+      "original": "http://n2t.net/ark:/65665/kq40f598a16-d5b3-44ce-9b24-32262ffe4cef",
+      "description": [
+        "Research in Progress",
+        "Portrait of 3 women???"
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "ccdf980e8663b5e56d2793ec507191a7",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": "http://rightsstatements.org/vocab/CNE/1.0/"
+      }
+    },
+    {
+      "id": "dpla-c725e11e6731534e4a4d0cabc5d377dc",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-777F336522BE2-000001",
+      "original": "http://n2t.net/ark:/65665/kq4f8850f52-aca0-48e7-b320-6d4aae5992d2",
+      "description": [
+        "Research in Progress"
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "c725e11e6731534e4a4d0cabc5d377dc",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Winchester Fitch"
+        ]
+      }
+    },
+    {
+      "id": "dpla-c181857521994fcbc0615007bbdf5629",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://thumbnails.calisphere.org/clip/150x150/a032047314d2dfe8198f5b7401ed7ae2",
+      "original": "https://sacramento.pastperfectonline.com/photo/04343398-1A68-49BE-B525-944857161819",
+      "description": [
+        "Photograph of Carolyn and baby Lulu Yager, 1869."
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/center-for-sacramento-history",
+        "name": "Center for Sacramento History"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "c181857521994fcbc0615007bbdf5629",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/center-for-sacramento-history",
+          "name": "Center for Sacramento History"
+        },
+        "provider": "California Digital Library",
+        "rights": [
+          "Please contact the contributing institution for more information regarding the copyright status of this object."
+        ]
+      }
+    },
+    {
+      "id": "dpla-bdb267fc3fa9638a42cd939846910051",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-CB8FDDBF3C4E2-000001",
+      "original": "http://n2t.net/ark:/65665/kq462bf476d-abbe-4cd0-b4e5-2778fdb510fd",
+      "description": [
+        "Research in Progress"
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "bdb267fc3fa9638a42cd939846910051",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Mrs. Jorge R. André"
+        ]
+      }
+    },
+    {
+      "id": "dpla-8466796fef1e9d30821d179139fe0a48",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://thumbnails.calisphere.org/clip/150x150/44e5849f7904f0a8cf3ab7197cd21bd9",
+      "original": "https://sacramento.pastperfectonline.com/photo/79C29C5D-892E-4512-9D9B-890237942380",
+      "description": [
+        "Photograph of Carolyn and Adam Yager."
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/center-for-sacramento-history",
+        "name": "Center for Sacramento History"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "8466796fef1e9d30821d179139fe0a48",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/center-for-sacramento-history",
+          "name": "Center for Sacramento History"
+        },
+        "provider": "California Digital Library",
+        "rights": [
+          "Please contact the contributing institution for more information regarding the copyright status of this object."
+        ]
+      }
+    },
+    {
+      "id": "dpla-80027239c3054e25cb9011961b87f5e8",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-3B9A7E41A5762-000001",
+      "original": "http://n2t.net/ark:/65665/kq49ed8598e-e529-4661-a2c7-fa4dd4443ee6",
+      "description": [
+        "Research in Progress"
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "80027239c3054e25cb9011961b87f5e8",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": "http://rightsstatements.org/vocab/CNE/1.0/"
+      }
+    },
+    {
+      "id": "dpla-7a9c97e8bd0bade01be7522844a12bca",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-359DE1C47A542-000001",
+      "original": "http://n2t.net/ark:/65665/kq4fdfbb85a-5cf1-42ec-9d62-ebcf9b7bae55",
+      "description": [
+        "Research in Progress",
+        "Horizontal rectangle. Detail showing angle of sculpture complex. A herm, arms outstretched, is flanked by panels sculpted with figures. See possible sketch (1957-122-67)"
+      ],
+      "author": "Robert Ingersoll Aitken, American, 1878–1949",
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia",
+        "Aitken, Robert Ingersoll"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "7a9c97e8bd0bade01be7522844a12bca",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Mrs. Robert I. Aitken"
+        ]
+      }
+    },
+    {
+      "id": "dpla-7244fb2f599450b48c9edc107c49ac4c",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-92CDDF48F18E2-000001",
+      "original": "http://n2t.net/ark:/65665/kq485f48f40-e313-48b3-8221-757eb9660638",
+      "description": [
+        "Research in Progress"
+      ],
+      "author": "Gustav Jensen, Danish, 1898 – 1954",
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia",
+        "Graphic arts",
+        "Jensen, Gustav"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "7244fb2f599450b48c9edc107c49ac4c",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Ellen Gustav Jensen"
+        ]
+      }
+    },
+    {
+      "id": "dpla-71cfe6d756b1eec98f024163c611e777",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-818FBDF99F1C2-000001",
+      "original": "http://n2t.net/ark:/65665/kq4acf53491-fa41-4b68-a0bb-e8de780ef559",
+      "description": [
+        "Research in Progress",
+        "Horizontal rectangle. Interior view with three men seated, reading. A store in left foreground. Reverse: Printed list of subjects in series."
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "71cfe6d756b1eec98f024163c611e777",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Museum purchase through gift of Mrs. Abram S. Hewitt"
+        ]
+      }
+    },
+    {
+      "id": "dpla-546072f3c5783725c649d9bb3347d6eb",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-400C2D667E272-000001",
+      "original": "http://n2t.net/ark:/65665/kq4ba80ad93-3a18-4815-b897-99712e28998d",
+      "description": [
+        "Research in Progress"
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "546072f3c5783725c649d9bb3347d6eb",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Winchester Fitch"
+        ]
+      }
+    },
+    {
+      "id": "dpla-3694f2ed86a99dea416129a382e7bbe6",
+      "title": [
+        "Photograph--Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "http://5008.sydneyplus.com/HistoryColorado_ArgusNet_Final/ViewImage.aspx?template=Image&field=DerivedIma&hash=4B25CC633B394B47F0C086C7CD6D6095",
+      "original": "https://5008.sydneyplus.com/HistoryColorado_ArgusNet_Final/Portal/Portal.aspx?component=AAFG&record=E708DFFA-CA71-4A17-8D3F-2B3937883EF6",
+      "description": [
+        "Weeks Photo/Colorado Springs House/1899-1906/1231 North Nevada Avenue"
+      ],
+      "author": "Weeks Photo",
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia",
+        "Colorado Springs, Colorado",
+        "Nevada Avenue",
+        "Residence",
+        "McAllister",
+        "House"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "3694f2ed86a99dea416129a382e7bbe6",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/history-colorado",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q5774674"
+          ],
+          "name": "History Colorado"
+        },
+        "provider": "Plains to Peaks Collective",
+        "rights": "http://rightsstatements.org/vocab/CNE/1.0/"
+      }
+    },
+    {
+      "id": "dpla-22404635a9fd7b77a617ff70478b3c01",
+      "title": [
+        "Photograph--Photograph Case--card"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "http://5008.sydneyplus.com/HistoryColorado_ArgusNet_Final/ViewImage.aspx?template=Image&field=DerivedIma&hash=C1E09B66DC2AC8BFB6D83DBE7DC1B6AF",
+      "original": "https://5008.sydneyplus.com/HistoryColorado_ArgusNet_Final/Portal/Portal.aspx?component=AAFG&record=5C70D52F-ED5B-4A15-89FC-DC72D03502FB",
+      "description": [
+        "One cloth photo case carrier, one printed card, and a set of seven photos of Silver Dollar Tabor (1889-1925) as an infant."
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/history-colorado",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q5774674"
+        ],
+        "name": "History Colorado"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "22404635a9fd7b77a617ff70478b3c01",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/history-colorado",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q5774674"
+          ],
+          "name": "History Colorado"
+        },
+        "provider": "Plains to Peaks Collective",
+        "rights": "http://rightsstatements.org/vocab/CNE/1.0/"
+      }
+    },
+    {
+      "id": "dpla-0e305118cac995580c5478dd7a0c104a",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-3B05D8A45F572-000001",
+      "original": "http://n2t.net/ark:/65665/kq4c16acb0d-486b-489c-920b-6757ee2818ad",
+      "description": [
+        "Research in Progress",
+        "Horizontal rectangle. Valley and village of Chamonix, Switzerland"
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "0e305118cac995580c5478dd7a0c104a",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Mrs. Dexter J. Purinton"
+        ]
+      }
+    },
+    {
+      "id": "dpla-0934d15a0b1872304b0825c10d91e031",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-F18BF2863A882-000001",
+      "original": "http://n2t.net/ark:/65665/kq49123fd15-36b3-4458-a5af-5d1bbaa8df0e",
+      "description": [
+        "Research in Progress",
+        "Horizontal rectangle. Stack shown lying on a beach, with bricks piled behind it and houses on a low bluff in the background"
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "0934d15a0b1872304b0825c10d91e031",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Given by Mrs. George Linzboth (Mrs. Kate Zogbaum Linzboth)"
+        ]
+      }
+    },
+    {
+      "id": "dpla-087db906b4c975e076c2ebea70f4d618",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-FC770C7A08112-000001",
+      "original": "http://n2t.net/ark:/65665/kq48f11e4cc-8092-4a97-8aab-0d9176f5e38c",
+      "description": [
+        "Research in Progress",
+        "Horizontal rectangle. View of a typical Victorian parlor, the fireplace is shown at the left."
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "087db906b4c975e076c2ebea70f4d618",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Anonymous Donor"
+        ]
+      }
+    },
+    {
+      "id": "dpla-045c4317e67e8cdd31ba63d6dd6ceb56",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-48658DABDD9E2-000001",
+      "original": "http://n2t.net/ark:/65665/kq459a77d7d-6946-45bd-b816-bddad537f6bc",
+      "description": [
+        "Research in Progress",
+        "Horizontal rectangle. Boulevard de la Madeleine, at des Capucines, Paris, France."
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "045c4317e67e8cdd31ba63d6dd6ceb56",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Mrs. Dexter J. Purinton"
+        ]
+      }
+    },
+    {
+      "id": "dpla-00ea41729e36c2be7f435eccd7128ad2",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-E104AB97B8692-000001",
+      "original": "http://n2t.net/ark:/65665/kq4bc12dc1b-1853-4d7a-be0e-832a2166c3d8",
+      "description": [
+        "Research in Progress",
+        "Horizontal rectangle. Tunnels along the Axenstrasse, along Lake Lucerne, Switzerland."
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "00ea41729e36c2be7f435eccd7128ad2",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Mrs. Dexter J. Purinton"
+        ]
+      }
     }
   ],
   "pipeline": {
     "mode": "cinema",
     "sources_enabled": [
-      "nasa"
+      "nasa",
+      "dpla"
     ],
-    "requests_this_run": 1,
-    "daily_requests": 2
+    "requests_this_run": 2,
+    "daily_requests": 4
   }
 }
