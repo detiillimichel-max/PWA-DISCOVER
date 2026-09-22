@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "generated_at": "local-foundation",
   "items": [
     {
@@ -28,6 +28,18 @@
       "image": "https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=1200&q=80",
       "description": "Item de demonstração para validar a pesquisa de museus.",
       "tags": ["museu", "arte", "cultura"]
+    },
+    {
+      "id": "demo-360",
+      "title": "Parque Nacional do Mercantour — panorama 360°",
+      "type": "panorama360",
+      "source": "Photo Sphere Viewer — demo",
+      "image": "https://photo-sphere-viewer-data.netlify.app/assets/sphere-small.jpg",
+      "panorama": "https://photo-sphere-viewer-data.netlify.app/assets/sphere-small.jpg",
+      "original": "https://photo-sphere-viewer-data.netlify.app/assets/sphere-small.jpg",
+      "description": "Panorama equiretangular de teste para validar o visualizador 360°. Uso somente como demonstração técnica nesta etapa.",
+      "author": "Damien Sorel",
+      "tags": ["360", "panorama", "Mercantour", "experiência visual"]
     }
   ]
 }
