@@ -260,3 +260,12 @@ button{
 .feed-slide-image--contain{object-fit:contain!important;background:#000}
 .viewer .psv-container,.viewer .psv-canvas-container{width:100%!important;height:100%!important}
 .viewer .psv-container{background:#000}
+
+
+/* DISCOVER • safe navigation and 360 container sizing */
+.feed-back{position:fixed;z-index:120;top:calc(12px + env(safe-area-inset-top));right:14px;min-height:42px;padding:8px 13px;border:1px solid #ffffff2b;border-radius:14px;background:#11151dcc;color:#fff;display:none;align-items:center;gap:7px;font:inherit;font-weight:700;cursor:pointer;backdrop-filter:blur(12px);box-shadow:0 8px 24px #0007;touch-action:manipulation}
+.feed-back svg{width:18px;height:18px}
+body.feed-mode .feed-back{display:inline-flex}
+.viewer{position:relative;flex:0 0 auto;width:100%;height:calc(100dvh - 120px);min-height:0;background:#000}
+.viewer .psv-container{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+@media(max-width:520px){.viewer{height:calc(100dvh - 120px)}}
