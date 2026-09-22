@@ -374,9 +374,6 @@ def fetch_wikimedia_360_items(limiter, config):
     candidates = []
 
     for category in categories:
-        if len(candidates) >= max_items * 2:
-            break
-
         params = urlencode({
             "action": "query",
             "generator": "categorymembers",
