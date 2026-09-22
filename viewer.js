@@ -11,6 +11,7 @@ const container = document.querySelector("#viewer");
 const title = document.querySelector("#viewer-title");
 const info = document.querySelector("#viewer-info");
 const closeButton = document.querySelector("#viewer-close");
+const gyroButton = document.querySelector("#viewer-gyro");
 
 const feedModal = document.querySelector("#feed-viewer-modal");
 const feedImage = document.querySelector("#feed-viewer-image");
@@ -27,6 +28,65 @@ const feedLikeButton = document.querySelector("[data-feed-action='like']");
 
 function renderIcons() {
   if (window.lucide?.createIcons) window.lucide.createIcons();
+}
+
+async function openViewer(item) {
+  if (!item?.panorama) return;
+
+  closeFeedViewer();
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("viewer-open");
+
+  title.textContent = item.title || "Panorama 360°";
+  info.innerHTML = item.original
+    ? `Fonte: ${escapeHtml(item.source || "origem externa")} • <a href="${escapeAttribute(item.original)}" target="_blank" rel="noopener noreferrer">Ver original ↗</a>`
+    : `Fonte: ${escapeHtml(item.source || "origem externa")}`;
+
+  container.innerHTML = "";
+  gyroButton.hidden = false;
+  gyroButton.disabled = false;
+  gyroButton.classList.remove("is-active");
+  gyroButton.querySelector("span").textContent = "Giro";
+
+  try {
+    viewer = new Viewer({
+      container,
+      panorama: item.panorama,
+      caption: item.title || "Panorama 360°",
+      loadingTxt: "Carregando panorama…",
+      mousemove: true,
+      mousewheel: true,
+      touchmoveTwoFingers: false,
+      keyboard: "fullscreen",
+      navbar: ["zoom", "move", "fullscreen"],
+      plugins: [
+        [GyroscopePlugin, {
+          moveMode: "smooth",
+          touchmove: true,
+          roll: true,
+          absolutePosition: false
+        }]
+      ],
+      lang: {
+        gyroscope: "Giroscópio"
+      }
+    });
+
+    viewer.addEventListener("ready", () => {
+      gyroButton.title = "Ativar giroscópio";
+      renderIcons();
+    }, { once: true });
+
+    viewer.addEventListener("panorama-error", () => {
+      info.textContent = "Não foi possível carregar este panorama.";
+    }, { once: true });
+  } catch (error) {
+    console.error(error);
+    info.textContent = "O visualizador 360° não pôde ser iniciado.";
+  }
+
+  renderIcons();
 }
 
 function closeViewer() {
@@ -80,22 +140,34 @@ function writeLike(id, value) {
   } catch {}
 }
 
-function setFeedMode(mode) {
+async function setFeedMode(mode) {
   if (!feedViewer) return;
 
   const gyro = feedViewer.getPlugin(GyroscopePlugin);
   if (!gyro) return;
 
   if (mode === "gyro") {
-    gyro.start("smooth").catch(() => {
-      feedSource.textContent = "Giroscópio indisponível neste dispositivo/navegador.";
-    });
+    try {
+      if (typeof DeviceOrientationEvent !== "undefined" &&
+          typeof DeviceOrientationEvent.requestPermission === "function") {
+        const permission = await DeviceOrientationEvent.requestPermission();
+        if (permission !== "granted") throw new Error("permission-denied");
+      }
+      await gyro.start("smooth");
+      feedSource.textContent = feedItem?.source ? "Fonte: " + feedItem.source : "Giroscópio ativo";
+      feedGyroButton.classList.add("is-active");
+      feedTouchButton.classList.remove("is-active");
+    } catch (error) {
+      console.warn("DISCOVER gyro:", error);
+      feedSource.textContent = "Giroscópio não autorizado ou indisponível. Tente tocar em Giro novamente.";
+      feedGyroButton.classList.remove("is-active");
+      feedTouchButton.classList.add("is-active");
+    }
   } else {
     gyro.stop();
+    feedGyroButton.classList.remove("is-active");
+    feedTouchButton.classList.add("is-active");
   }
-
-  feedGyroButton.classList.toggle("is-active", mode === "gyro");
-  feedTouchButton.classList.toggle("is-active", mode === "touch");
   renderIcons();
 }
 
@@ -164,17 +236,9 @@ async function openFeedViewer(item, meta = {}) {
       }
     });
 
-    feedViewer.addEventListener("ready", async () => {
-      try {
-        const gyro = feedViewer.getPlugin(GyroscopePlugin);
-        const supported = await gyro.isSupported();
-        feedGyroButton.disabled = !supported;
-        feedGyroButton.title = supported
-          ? "Modo giroscópio"
-          : "Giroscópio não disponível neste dispositivo";
-      } catch {
-        feedGyroButton.disabled = true;
-      }
+    feedViewer.addEventListener("ready", () => {
+      feedGyroButton.disabled = false;
+      feedGyroButton.title = "Modo giroscópio";
       setFeedMode(metaStartMode === "gyro" ? "gyro" : "touch");
     }, { once: true });
 
@@ -230,6 +294,28 @@ function toggleFeedLike() {
 }
 
 closeButton.addEventListener("click", closeViewer);
+
+gyroButton.addEventListener("click", async () => {
+  if (!viewer) return;
+  const gyro = viewer.getPlugin(GyroscopePlugin);
+  if (!gyro) return;
+
+  try {
+    if (typeof DeviceOrientationEvent !== "undefined" &&
+        typeof DeviceOrientationEvent.requestPermission === "function") {
+      const permission = await DeviceOrientationEvent.requestPermission();
+      if (permission !== "granted") throw new Error("permission-denied");
+    }
+    await gyro.start("smooth");
+    gyroButton.classList.add("is-active");
+    gyroButton.querySelector("span").textContent = "Giro ativo";
+  } catch (error) {
+    console.warn("DISCOVER gyro:", error);
+    gyroButton.classList.remove("is-active");
+    gyroButton.querySelector("span").textContent = "Giro indisponível";
+  }
+  renderIcons();
+});
 
 modal.addEventListener("click", event => {
   if (event.target === modal) closeViewer();
