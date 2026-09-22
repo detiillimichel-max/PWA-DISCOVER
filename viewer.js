@@ -138,6 +138,7 @@ async function openFeedViewer(item, meta = {}) {
 
   feedPanorama.innerHTML = "";
   feedImage.removeAttribute("src");
+  feedSource.textContent = "Carregando experiência 360°…";
 
   try {
     feedViewer = new Viewer({
@@ -179,10 +180,15 @@ async function openFeedViewer(item, meta = {}) {
 
     feedViewer.addEventListener("panorama-error", () => {
       feedSource.textContent = "Não foi possível carregar este panorama.";
+      feedImage.hidden = false;
+      feedImage.src = item.image || item.panorama || "";
     }, { once: true });
   } catch (error) {
     console.error(error);
-    feedSource.textContent = "O visualizador 360° não pôde ser iniciado.";
+    feedSource.textContent = "Visualizador 360 indisponível — mostrando a imagem original.";
+    feedPanorama.hidden = true;
+    feedImage.hidden = false;
+    feedImage.src = item.image || item.panorama || "";
   }
 
   renderIcons();
@@ -193,8 +199,8 @@ async function shareFeedItem() {
 
   const shareData = {
     title: feedItem.title || "DISCOVER",
-    text: feedItem.description || "Descoberta no DISCOVER",
-    url: feedItem.original || window.location.href
+    text: (feedItem.description || "Descoberta no DISCOVER") + "\n\nDISCOVER",
+    url: new URL("./?discover=" + encodeURIComponent(feedItem.id), window.location.href).href
   };
 
   try {
