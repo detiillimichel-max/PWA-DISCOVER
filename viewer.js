@@ -119,6 +119,7 @@ async function openFeedViewer(item, meta = {}) {
   feedPosition.textContent = index + " / " + total;
 
   const is360 = item.type === "panorama360" && item.panorama;
+  const metaStartMode = meta.startMode || (is360 ? "touch" : "image");
   feedImage.hidden = is360;
   feedPanorama.hidden = !is360;
   feedGyroButton.hidden = !is360;
@@ -173,7 +174,7 @@ async function openFeedViewer(item, meta = {}) {
       } catch {
         feedGyroButton.disabled = true;
       }
-      setFeedMode("touch");
+      setFeedMode(metaStartMode === "gyro" ? "gyro" : "touch");
     }, { once: true });
 
     feedViewer.addEventListener("panorama-error", () => {
