@@ -67,6 +67,10 @@ async function openViewer(item) {
       caption: item.title || "Panorama 360°",
       loadingTxt: "Carregando panorama…",
       canvasBackground: "#000",
+      size: {
+        width: Math.max(1, container.clientWidth),
+        height: Math.max(1, container.clientHeight)
+      },
       mousemove: true,
       mousewheel: true,
       touchmoveTwoFingers: false,
