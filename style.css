@@ -5,16 +5,16 @@ body{margin:0;min-height:100vh;background:radial-gradient(circle at top right,#1
 .eyebrow{margin:0 0 6px;font-size:.72rem;letter-spacing:.16em;color:#8f9bb3;font-weight:700}
 h1,h2,p{margin-top:0}
 h1{font-size:clamp(2rem,8vw,4rem);margin-bottom:8px;letter-spacing:-.05em}
-h1 span{font-size:.7em}.subtitle{color:#aab4c8;max-width:620px}
+h1 span{font-size:.7em}.title-icon{width:.72em;height:.72em;vertical-align:-.04em;stroke-width:1.8}.subtitle{color:#aab4c8;max-width:620px}
 .app-shell{width:min(1100px,calc(100% - 32px));margin:20px auto 40px}
 .search-card{padding:20px;border:1px solid #252b38;border-radius:24px;background:#11151d;box-shadow:0 18px 50px #0005}
 label{display:block;font-weight:700;margin-bottom:10px}
 .search-box{display:flex;align-items:center;gap:10px;border:1px solid #303747;background:#0b0e14;border-radius:16px;padding:0 14px}
-.search-box span{font-size:1.6rem;color:#8f9bb3}
+.search-box svg{width:20px;height:20px;color:#8f9bb3;flex:0 0 auto}
 input{width:100%;border:0;outline:0;background:transparent;color:#fff;padding:15px 0;font-size:1rem}
 .status{margin:10px 0 0;color:#7f8ba3;font-size:.85rem}
 .section-heading{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:30px 0 14px}
-h2{margin-bottom:0;font-size:1.5rem}.count{color:#8f9bb3;font-size:.85rem}
+h2{margin-bottom:0;font-size:1.5rem;display:flex;align-items:center;gap:8px}h2 svg{width:22px;height:22px;color:#a9b9d8;stroke-width:1.8}.count{color:#8f9bb3;font-size:.85rem}
 .discover-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}
 .card{overflow:hidden;border:1px solid #252b38;border-radius:20px;background:#11151d}
 .card-media{aspect-ratio:16/10;background:#181e29;overflow:hidden}
@@ -35,3 +35,8 @@ h2{margin-bottom:0;font-size:1.5rem}.count{color:#8f9bb3;font-size:.85rem}
 body.viewer-open{overflow:hidden}
 @media(min-width:760px){.topbar{padding-top:48px}.search-card{padding:28px}.viewer-header{padding-left:24px;padding-right:24px}}
 footer{max-width:1100px;margin:auto;padding:20px;color:#69758d;font-size:.75rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+.library-section{margin-top:26px}.library-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.library-action{min-height:82px;border:1px solid #252b38;border-radius:18px;background:#11151d;color:#aab4c8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font:inherit;font-weight:700;cursor:pointer}.library-action svg{width:23px;height:23px;stroke-width:1.8}.library-action.is-active{background:#192235;border-color:#465674;color:#f4f6fb;box-shadow:0 10px 28px #0003}
+.panorama-section{width:min(1100px,calc(100% - 32px));margin:34px auto 40px}.panorama-section[hidden]{display:none}.section-description{margin:8px 0 0;color:#8f9bb3;font-size:.88rem;line-height:1.45}.section-link{border:0;background:transparent;color:#b9c8e0;font:inherit;font-weight:700;display:flex;align-items:center;gap:5px;cursor:pointer}.section-link svg{width:16px;height:16px}.panorama-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px}.panorama-card{overflow:hidden;border:1px solid #252b38;border-radius:20px;background:#11151d}.panorama-card-media{position:relative;aspect-ratio:16/10;background:#181e29;overflow:hidden}.panorama-card-media img{width:100%;height:100%;object-fit:cover;display:block}.panorama-badge{position:absolute;left:10px;top:10px;display:inline-flex;align-items:center;gap:5px;padding:6px 9px;border:1px solid #ffffff22;border-radius:999px;background:#0b0e14cc;color:#f4f6fb;font-size:.72rem;font-weight:700;backdrop-filter:blur(8px)}.panorama-badge svg{width:14px;height:14px}.panorama-card-body{padding:14px}.panorama-card-body h3{margin:0 0 6px;font-size:.96rem;line-height:1.3}.panorama-card-body p{margin:0 0 10px;color:#7f8ba3;font-size:.75rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.panorama-button{display:flex;align-items:center;justify-content:center;gap:7px}.panorama-card .panorama-button svg{width:17px;height:17px;vertical-align:-3px}
+@media(max-width:420px){.library-nav{gap:8px}.library-action{min-height:74px;font-size:.78rem}.section-heading{align-items:flex-start}}
+@media(min-width:760px){.panorama-grid{grid-template-columns:repeat(4,1fr)}}
