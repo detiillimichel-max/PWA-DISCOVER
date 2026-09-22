@@ -1,10 +1,13 @@
-const CACHE = "discover-shell-v2";
+const VERSION = "v3";
+const CACHE = `discover-shell-${VERSION}`;
+const CATALOG_CACHE = "discover-catalog-v3";
 
 const ASSETS = [
   "./",
   "./index.html",
   "./style.css",
   "./app.js",
+  "./viewer.js",
   "./manifest.json"
 ];
 
@@ -20,12 +23,11 @@ self.addEventListener("activate", event => {
     caches.keys().then(keys =>
       Promise.all(
         keys
-          .filter(key => key !== CACHE && key !== "discover-catalog-v1")
+          .filter(key => key !== CACHE && key !== CATALOG_CACHE)
           .map(key => caches.delete(key))
       )
-    )
+    ).then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
 self.addEventListener("fetch", event => {
