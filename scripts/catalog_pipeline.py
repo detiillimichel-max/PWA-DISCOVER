@@ -143,21 +143,16 @@ def validate_catalog(catalog):
 
 
 def fetch_nasa_items(limiter):
-    api_key = os.getenv("NASA_API_KEY")
-    if not api_key:
-        print("[NASA] NASA_API_KEY não configurada; fonte ignorada.")
-        return []
-
+    # A NASA Image and Video Library API atual não exige API key
+    # para a busca pública. Mantemos a NASA_API_KEY no GitHub Secrets
+    # para futuras APIs da NASA que possam exigir autenticação.
     params = urlencode({
-        "api_key": api_key,
-        "sol": 1000,
-        "camera": "fhaz",
+        "q": "Mars",
+        "media_type": "image",
         "page": 1,
+        "page_size": 20,
     })
-    url = (
-        "https://api.nasa.gov/mars-photos/api/v1/rovers/"
-        f"curiosity/photos?{params}"
-    )
+    url = f"https://images-api.nasa.gov/search?{params}"
 
     try:
         data = limiter.get_json(url)
@@ -168,43 +163,59 @@ def fetch_nasa_items(limiter):
         print(f"[NASA] Consulta não incorporada: {exc}")
         return []
 
+    collection = data.get("collection") or {}
+    results = collection.get("items") or []
     items = []
-    for photo in data.get("photos", [])[:5]:
-        photo_id = photo.get("id")
-        image_url = photo.get("img_src")
-        if not photo_id or not image_url:
+
+    for result in results[:5]:
+        data_items = result.get("data") or []
+        metadata = data_items[0] if data_items else {}
+        nasa_id = metadata.get("nasa_id")
+        if not nasa_id:
             continue
 
-        camera = photo.get("camera") or {}
-        rover = photo.get("rover") or {}
+        preview = ""
+        for link in result.get("links") or []:
+            if link.get("rel") == "preview" and link.get("href"):
+                preview = link["href"]
+                break
+
+        if not preview:
+            continue
+
+        title = metadata.get("title") or f"NASA — {nasa_id}"
+        description = metadata.get("description") or (
+            "Imagem da NASA encontrada na NASA Image and Video Library."
+        )
+        keywords = metadata.get("keywords") or []
+        if not isinstance(keywords, list):
+            keywords = [str(keywords)]
 
         items.append({
-            "id": f"nasa-mars-{photo_id}",
-            "title": f"Marte — Curiosity #{photo_id}",
+            "id": f"nasa-library-{nasa_id}",
+            "title": title,
             "type": "space",
-            "source": "NASA Mars Rover Photos",
-            "image": image_url,
-            "original": image_url,
-            "description": (
-                f"Imagem registrada pelo rover {rover.get('name', 'Curiosity')} "
-                "na missão de exploração de Marte."
-            ),
-            "author": "NASA/JPL-Caltech/MSSS",
+            "source": "NASA Image and Video Library",
+            "image": preview,
+            "original": f"https://images.nasa.gov/details/{nasa_id}",
+            "description": description,
+            "author": metadata.get("photographer") or metadata.get("center") or "NASA",
             "tags": [
-                "Marte",
                 "NASA",
-                "Curiosity",
-                camera.get("full_name") or camera.get("name") or "rover",
+                "espaço",
+                "Marte",
+                *[str(keyword) for keyword in keywords[:6]],
             ],
             "metadata": {
                 "source_key": "nasa",
-                "rover": rover.get("name"),
-                "camera": camera.get("full_name") or camera.get("name"),
-                "earth_date": photo.get("earth_date"),
-                "sol": photo.get("sol"),
+                "nasa_id": nasa_id,
+                "center": metadata.get("center"),
+                "date_created": metadata.get("date_created"),
+                "media_type": metadata.get("media_type"),
             },
         })
 
+    print(f"[NASA] Image Library: {len(items)} imagens selecionadas.")
     return items
 
 
