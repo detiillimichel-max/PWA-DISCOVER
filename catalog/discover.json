@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "generated_at": "local-foundation",
+  "items": [
+    {
+      "id": "demo-egypt",
+      "title": "Egito Antigo — descoberta de teste",
+      "type": "history",
+      "source": "catalogo-local",
+      "image": "https://images.unsplash.com/photo-1568322445389-f64f0a4d9c2b?auto=format&fit=crop&w=1200&q=80",
+      "description": "Item de demonstração usado para validar o catálogo e a busca.",
+      "tags": ["Egito Antigo", "história", "arqueologia"]
+    },
+    {
+      "id": "demo-mars",
+      "title": "Marte — descoberta de teste",
+      "type": "space",
+      "source": "catalogo-local",
+      "image": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=1200&q=80",
+      "description": "Item de demonstração para testar a busca por Marte.",
+      "tags": ["Marte", "NASA", "espaço"]
+    },
+    {
+      "id": "demo-museum",
+      "title": "Museu — descoberta de teste",
+      "type": "museum",
+      "source": "catalogo-local",
+      "image": "https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=1200&q=80",
+      "description": "Item de demonstração para validar a pesquisa de museus.",
+      "tags": ["museu", "arte", "cultura"]
+    }
+  ]
+}

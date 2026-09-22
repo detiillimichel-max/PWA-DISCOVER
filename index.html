@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="description" content="DISCOVER — catálogo visual de imagens, cultura, história e experiências 360°.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>DISCOVER</title>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">PWA • MODO CINEMA</p>
+      <h1>DISCOVER <span>🌎</span></h1>
+      <p class="subtitle">Descubra imagens, cultura, história e experiências visuais.</p>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="search-card" aria-label="Busca">
+      <label for="search">O que você quer descobrir?</label>
+      <div class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input id="search" type="search" placeholder="Ex.: Marte, museu, Egito..." autocomplete="off">
+      </div>
+      <p id="catalog-status" class="status">Catálogo local carregando…</p>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CATÁLOGO</p>
+          <h2>Descobertas</h2>
+        </div>
+        <span id="result-count" class="count">0 itens</span>
+      </div>
+      <div id="discover-grid" class="discover-grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span>DISCOVER V1 • Fundação</span>
+    <span>Catálogo local • sem APIs na abertura</span>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
