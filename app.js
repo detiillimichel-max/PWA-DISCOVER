@@ -165,15 +165,74 @@ function renderFeed(items) {
   }
 
   grid.innerHTML = `
-    <div class="feed-intro">
-      <i data-lucide="rss" aria-hidden="true"></i>
-      <div><strong>Feed DISCOVER</strong><span>${items.length} cards disponíveis</span></div>
-    </div>
-    <div class="feed-list">
-      ${items.map(item => renderCard(item, { feed: true })).join("")}
+    <div class="feed-stage" aria-label="Feed vertical DISCOVER">
+      <div class="feed-list">
+        ${items.map((item, index) => renderFeedSlide(item, index, items.length)).join("")}
+      </div>
     </div>
   `;
   renderIcons();
+}
+
+function renderFeedSlide(item, index, total) {
+  const is360 = item.type === "panorama360" && item.panorama;
+  return `
+    <article class="feed-slide" data-feed-slide-id="${escapeHtml(item.id)}">
+      <div class="feed-slide-media">
+        <img
+          src="${escapeHtml(item.image || "")}"
+          alt="${escapeHtml(item.title || "Imagem DISCOVER")}"
+          loading="${index < 2 ? "eager" : "lazy"}"
+          referrerpolicy="no-referrer"
+          class="feed-slide-image feed-open-image"
+          data-feed-id="${escapeHtml(item.id)}"
+          onerror="this.style.display='none';this.parentElement.classList.add('media-fallback')"
+        >
+        <div class="media-fallback-icon" aria-hidden="true"><i data-lucide="image-off"></i></div>
+        <div class="feed-slide-gradient" aria-hidden="true"></div>
+      </div>
+
+      <div class="feed-slide-top">
+        <div>
+          <span class="feed-live-dot"></span>
+          <strong>DISCOVER</strong>
+          <small>${index + 1} / ${total}</small>
+        </div>
+      </div>
+
+      <div class="feed-slide-content">
+        <div class="feed-slide-copy">
+          <h3>${escapeHtml(item.title || "Descoberta")}</h3>
+          <p>${escapeHtml(item.description || "")}</p>
+          <div class="feed-tags">
+            <span class="tag">${escapeHtml(item.type || "discover")}</span>
+            <span class="tag">${escapeHtml(item.source || "catálogo local")}</span>
+          </div>
+        </div>
+
+        <div class="feed-slide-rail" aria-label="Ações">
+          ${is360 ? `
+            <button class="feed-action feed-inline-gyro" type="button" data-feed-id="${escapeHtml(item.id)}" aria-label="Modo giroscópio" title="Modo giroscópio">
+              <i data-lucide="compass" aria-hidden="true"></i><span>Giro</span>
+            </button>
+            <button class="feed-action feed-inline-360" type="button" data-feed-id="${escapeHtml(item.id)}" aria-label="Abrir 360 com toque" title="360 com toque">
+              <i data-lucide="rotate-3d" aria-hidden="true"></i><span>360</span>
+            </button>
+          ` : ""}
+          <button class="feed-action feed-inline-share" type="button" data-feed-id="${escapeHtml(item.id)}" aria-label="Compartilhar" title="Compartilhar">
+            <i data-lucide="share-2" aria-hidden="true"></i><span>Compartilhar</span>
+          </button>
+          <button class="feed-action feed-inline-like" type="button" data-feed-id="${escapeHtml(item.id)}" aria-label="Curtir" title="Curtir">
+            <i data-lucide="thumbs-up" aria-hidden="true"></i><span>Curtir</span>
+          </button>
+        </div>
+      </div>
+
+      <button class="feed-open-fullscreen" type="button" data-feed-id="${escapeHtml(item.id)}" aria-label="Abrir ${escapeHtml(item.title || "descoberta")} em tela cheia">
+        <i data-lucide="maximize-2" aria-hidden="true"></i>
+      </button>
+    </article>
+  `;
 }
 
 function updateDiscoverView(items) {
