@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#0b0d12">
   <meta name="description" content="DISCOVER — catálogo visual de imagens, cultura, história e experiências 360°.">
   <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.15.1/index.css">
   <link rel="stylesheet" href="style.css">
   <title>DISCOVER</title>
 </head>
@@ -40,11 +41,32 @@
     </section>
   </main>
 
+  <div id="viewer-modal" class="viewer-modal" aria-hidden="true">
+    <div class="viewer-header">
+      <div>
+        <p id="viewer-eyebrow" class="eyebrow">EXPERIÊNCIA 360°</p>
+        <h2 id="viewer-title">Panorama</h2>
+      </div>
+      <button id="viewer-close" class="viewer-close" type="button" aria-label="Fechar visualizador">×</button>
+    </div>
+    <div id="viewer" class="viewer" aria-label="Visualizador de panorama 360 graus"></div>
+    <div id="viewer-info" class="viewer-info"></div>
+  </div>
+
   <footer>
     <span>DISCOVER V1 • Fundação</span>
     <span>Catálogo local • sem APIs na abertura</span>
   </footer>
 
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+        "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.15.1/index.module.js"
+      }
+    }
+  </script>
+  <script type="module" src="viewer.js"></script>
   <script src="app.js" defer></script>
 </body>
 </html>
