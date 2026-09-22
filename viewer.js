@@ -2,12 +2,32 @@ import { Viewer } from "@photo-sphere-viewer/core";
 import { GyroscopePlugin } from "@photo-sphere-viewer/gyroscope-plugin";
 
 let viewer = null;
+let feedViewer = null;
+let feedItem = null;
+let feedLiked = false;
 
 const modal = document.querySelector("#viewer-modal");
 const container = document.querySelector("#viewer");
 const title = document.querySelector("#viewer-title");
 const info = document.querySelector("#viewer-info");
 const closeButton = document.querySelector("#viewer-close");
+
+const feedModal = document.querySelector("#feed-viewer-modal");
+const feedImage = document.querySelector("#feed-viewer-image");
+const feedPanorama = document.querySelector("#feed-viewer-panorama");
+const feedTitle = document.querySelector("#feed-viewer-title");
+const feedCaption = document.querySelector("#feed-viewer-caption");
+const feedSource = document.querySelector("#feed-viewer-source");
+const feedPosition = document.querySelector("#feed-viewer-position");
+const feedClose = document.querySelector("#feed-viewer-close");
+const feedGyroButton = document.querySelector("[data-feed-action='gyro']");
+const feedTouchButton = document.querySelector("[data-feed-action='touch360']");
+const feedShareButton = document.querySelector("[data-feed-action='share']");
+const feedLikeButton = document.querySelector("[data-feed-action='like']");
+
+function renderIcons() {
+  if (window.lucide?.createIcons) window.lucide.createIcons();
+}
 
 function closeViewer() {
   modal.classList.remove("is-open");
@@ -22,23 +42,105 @@ function closeViewer() {
   container.innerHTML = "";
 }
 
-async function openViewer(item) {
-  if (!item?.panorama) return;
+function closeFeedViewer() {
+  feedModal.classList.remove("is-open");
+  feedModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("viewer-open");
 
-  modal.classList.add("is-open");
-  modal.setAttribute("aria-hidden", "false");
+  if (feedViewer) {
+    feedViewer.destroy();
+    feedViewer = null;
+  }
+
+  feedPanorama.innerHTML = "";
+  feedImage.removeAttribute("src");
+  feedItem = null;
+}
+
+function setFeedLikeState() {
+  if (!feedItem || !feedLikeButton) return;
+
+  feedLikeButton.classList.toggle("is-liked", feedLiked);
+  feedLikeButton.setAttribute("aria-pressed", String(feedLiked));
+  feedLikeButton.querySelector("span").textContent = feedLiked ? "Curtido" : "Curtir";
+  renderIcons();
+}
+
+function readLike(id) {
+  try {
+    return localStorage.getItem("discover-like:" + id) === "1";
+  } catch {
+    return false;
+  }
+}
+
+function writeLike(id, value) {
+  try {
+    localStorage.setItem("discover-like:" + id, value ? "1" : "0");
+  } catch {}
+}
+
+function setFeedMode(mode) {
+  if (!feedViewer) return;
+
+  const gyro = feedViewer.getPlugin(GyroscopePlugin);
+  if (!gyro) return;
+
+  if (mode === "gyro") {
+    gyro.start("smooth").catch(() => {
+      feedSource.textContent = "Giroscópio indisponível neste dispositivo/navegador.";
+    });
+  } else {
+    gyro.stop();
+  }
+
+  feedGyroButton.classList.toggle("is-active", mode === "gyro");
+  feedTouchButton.classList.toggle("is-active", mode === "touch");
+  renderIcons();
+}
+
+async function openFeedViewer(item, meta = {}) {
+  if (!item?.image && !item?.panorama) return;
+
+  closeViewer();
+
+  feedItem = item;
+  feedLiked = readLike(item.id);
+
+  feedModal.classList.add("is-open");
+  feedModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("viewer-open");
 
-  title.textContent = item.title || "Panorama 360°";
-  info.innerHTML = item.original
-    ? `Fonte: ${escapeHtml(item.source || "origem externa")} • <a href="${escapeAttribute(item.original)}" target="_blank" rel="noopener noreferrer">Ver original ↗</a>`
-    : `Fonte: ${escapeHtml(item.source || "origem externa")}`;
+  feedTitle.textContent = item.title || "DISCOVER";
+  feedCaption.textContent = item.title || "Descoberta";
+  feedSource.textContent = item.source ? "Fonte: " + item.source : "";
+  const index = Number.isFinite(meta.index) ? meta.index + 1 : 1;
+  const total = Number.isFinite(meta.total) ? meta.total : 1;
+  feedPosition.textContent = index + " / " + total;
 
-  container.innerHTML = "";
+  const is360 = item.type === "panorama360" && item.panorama;
+  feedImage.hidden = is360;
+  feedPanorama.hidden = !is360;
+  feedGyroButton.hidden = !is360;
+  feedTouchButton.hidden = !is360;
+  feedGyroButton.disabled = !is360;
+  feedTouchButton.disabled = !is360;
+
+  setFeedLikeState();
+
+  if (!is360) {
+    feedImage.src = item.image || "";
+    feedImage.alt = item.title || "Imagem DISCOVER";
+    renderIcons();
+    return;
+  }
+
+  feedPanorama.innerHTML = "";
+  feedImage.removeAttribute("src");
 
   try {
-    viewer = new Viewer({
-      container,
+    feedViewer = new Viewer({
+      container: feedPanorama,
       panorama: item.panorama,
       caption: item.title || "Panorama 360°",
       loadingTxt: "Carregando panorama…",
@@ -46,7 +148,7 @@ async function openViewer(item) {
       mousewheel: true,
       touchmoveTwoFingers: false,
       keyboard: "fullscreen",
-      navbar: ["zoom", "move", "gyroscope", "fullscreen"],
+      navbar: ["zoom", "move", "fullscreen"],
       plugins: [
         [GyroscopePlugin, {
           moveMode: "smooth",
@@ -60,32 +162,64 @@ async function openViewer(item) {
       }
     });
 
-    viewer.addEventListener("panorama-error", () => {
-      info.textContent = "Não foi possível carregar este panorama.";
+    feedViewer.addEventListener("ready", async () => {
+      try {
+        const gyro = feedViewer.getPlugin(GyroscopePlugin);
+        const supported = await gyro.isSupported();
+        feedGyroButton.disabled = !supported;
+        feedGyroButton.title = supported
+          ? "Modo giroscópio"
+          : "Giroscópio não disponível neste dispositivo";
+      } catch {
+        feedGyroButton.disabled = true;
+      }
+      setFeedMode("touch");
+    }, { once: true });
+
+    feedViewer.addEventListener("panorama-error", () => {
+      feedSource.textContent = "Não foi possível carregar este panorama.";
     }, { once: true });
   } catch (error) {
     console.error(error);
-    info.textContent = "O visualizador 360° não pôde ser iniciado.";
+    feedSource.textContent = "O visualizador 360° não pôde ser iniciado.";
+  }
+
+  renderIcons();
+}
+
+async function shareFeedItem() {
+  if (!feedItem) return;
+
+  const shareData = {
+    title: feedItem.title || "DISCOVER",
+    text: feedItem.description || "Descoberta no DISCOVER",
+    url: feedItem.original || window.location.href
+  };
+
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData);
+    } else if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(shareData.url);
+      feedShareButton.querySelector("span").textContent = "Copiado";
+      renderIcons();
+      window.setTimeout(() => {
+        if (feedShareButton) {
+          feedShareButton.querySelector("span").textContent = "Compartilhar";
+          renderIcons();
+        }
+      }, 1800);
+    }
+  } catch (error) {
+    if (error?.name !== "AbortError") console.error(error);
   }
 }
 
-function escapeHtml(value) {
-  return String(value).replace(/[&<>"']/g, char => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#039;"
-  }[char]));
-}
-
-function escapeAttribute(value) {
-  return String(value).replace(/[&<>"]/g, char => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;"
-  }[char]));
+function toggleFeedLike() {
+  if (!feedItem) return;
+  feedLiked = !feedLiked;
+  writeLike(feedItem.id, feedLiked);
+  setFeedLikeState();
 }
 
 closeButton.addEventListener("click", closeViewer);
@@ -94,13 +228,27 @@ modal.addEventListener("click", event => {
   if (event.target === modal) closeViewer();
 });
 
+feedClose.addEventListener("click", closeFeedViewer);
+
+feedModal.addEventListener("click", event => {
+  if (event.target === feedModal) closeFeedViewer();
+});
+
+feedGyroButton.addEventListener("click", () => setFeedMode("gyro"));
+feedTouchButton.addEventListener("click", () => setFeedMode("touch"));
+feedShareButton.addEventListener("click", shareFeedItem);
+feedLikeButton.addEventListener("click", toggleFeedLike);
+
 document.addEventListener("keydown", event => {
-  if (event.key === "Escape" && modal.classList.contains("is-open")) {
-    closeViewer();
+  if (event.key === "Escape") {
+    if (modal.classList.contains("is-open")) closeViewer();
+    if (feedModal.classList.contains("is-open")) closeFeedViewer();
   }
 });
 
 window.DISCOVER360 = Object.freeze({
   open: openViewer,
-  close: closeViewer
+  close: closeViewer,
+  openFeed: openFeedViewer,
+  closeFeed: closeFeedViewer
 });
