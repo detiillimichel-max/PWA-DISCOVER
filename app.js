@@ -20,8 +20,6 @@ function exitFeedMode() {
   carouselIndex = 0;
   feedIndex = 0;
   document.body.classList.remove("feed-mode");
-  $("#feed-back")?.addEventListener("click", exitFeedMode);
-
 document.querySelectorAll(".library-action").forEach(button => {
     button.classList.toggle("is-active", button.dataset.view === "all");
   });
@@ -30,6 +28,7 @@ document.querySelectorAll(".library-action").forEach(button => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+$("#feed-back")?.addEventListener("click", exitFeedMode);
 
 function normalize(text) {
   return String(text || "")
