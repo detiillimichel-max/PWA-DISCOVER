@@ -119,3 +119,136 @@ footer{max-width:1100px;margin:auto;padding:20px;color:#69758d;font-size:.75rem;
   .feed-stage .feed-list{gap:18px}
   .feed-slide{min-height:720px}
 }
+
+
+/* DISCOVER • Feed Cinema V2 */
+body.feed-mode{
+  overflow:hidden;
+  background:#05070b;
+}
+body.feed-mode .topbar,
+body.feed-mode .library-section,
+body.feed-mode .search-card,
+body.feed-mode #discover-section > .section-heading,
+body.feed-mode .discover-carousel-wrap > .carousel-arrow,
+body.feed-mode #panorama-section,
+body.feed-mode footer{
+  display:none !important;
+}
+body.feed-mode .app-shell{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:0;
+}
+body.feed-mode #discover-section{
+  margin:0;
+  width:100%;
+}
+body.feed-mode .discover-carousel-wrap{
+  display:block;
+  width:100%;
+  margin:0;
+}
+body.feed-mode #discover-grid{
+  width:100%;
+  margin:0;
+}
+body.feed-mode .feed-stage{
+  width:100%;
+  height:100dvh;
+  max-width:none;
+  overflow-y:auto;
+  overflow-x:hidden;
+  scroll-snap-type:y mandatory;
+  overscroll-behavior-y:contain;
+  -webkit-overflow-scrolling:touch;
+  touch-action:pan-y;
+  scrollbar-width:none;
+}
+body.feed-mode .feed-stage::-webkit-scrollbar{display:none}
+body.feed-mode .feed-stage .feed-list{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+body.feed-mode .feed-slide{
+  width:100%;
+  height:100dvh;
+  min-height:100dvh;
+  flex:0 0 100dvh;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  scroll-snap-align:start;
+  scroll-snap-stop:always;
+}
+body.feed-mode .feed-slide-media,
+body.feed-mode .feed-slide-image{
+  border-radius:0;
+}
+body.feed-mode .feed-slide-image{
+  object-fit:cover;
+}
+body.feed-mode .feed-slide-top{
+  padding:calc(18px + env(safe-area-inset-top)) 18px 0;
+}
+body.feed-mode .feed-slide-content{
+  padding:20px 12px calc(22px + env(safe-area-inset-bottom)) 18px;
+}
+body.feed-mode .feed-open-fullscreen{
+  display:none;
+}
+body.feed-mode .feed-slide-rail{
+  width:60px;
+  flex-basis:60px;
+  gap:10px;
+}
+body.feed-mode .feed-slide-rail .feed-action{
+  width:54px;
+  min-height:54px;
+}
+.feed-action,
+.feed-open-fullscreen,
+.carousel-arrow,
+.library-action,
+.panorama-button,
+.share-button,
+button{
+  touch-action:manipulation;
+}
+.feed-viewer-modal{
+  z-index:10000;
+  width:100vw;
+  height:100dvh;
+}
+.feed-viewer-media{
+  width:100vw;
+  height:100dvh;
+}
+.feed-viewer-panorama,
+.feed-viewer-panorama .psv-container,
+.feed-viewer-panorama .psv-canvas-container{
+  width:100% !important;
+  height:100% !important;
+}
+.feed-viewer-image{
+  width:100vw;
+  height:100dvh;
+  object-fit:contain;
+}
+.feed-viewer-rail{
+  pointer-events:auto;
+}
+.feed-viewer-top,
+.feed-viewer-bottom{
+  pointer-events:auto;
+}
+.feed-viewer-modal .psv-navbar{
+  z-index:20;
+}
+@media(max-width:520px){
+  body.feed-mode .feed-slide-copy h3{font-size:1.05rem}
+  body.feed-mode .feed-slide-copy p{font-size:.84rem}
+}
