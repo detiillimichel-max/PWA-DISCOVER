@@ -7,7 +7,7 @@
   <meta name="description" content="DISCOVER — catálogo visual de imagens, cultura, história e experiências 360°.">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.15.1/index.css">
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
   <title>DISCOVER</title>
 </head>
 <body>
@@ -28,9 +28,10 @@
         </div>
       </div>
       <div class="library-nav">
-        <button class="library-action is-active" type="button" data-filter="all"><i data-lucide="layout-grid" aria-hidden="true"></i><span>Ver tudo</span></button>
-        <button class="library-action" type="button" data-filter="360"><i data-lucide="orbit" aria-hidden="true"></i><span>360°</span></button>
-        <button class="library-action" type="button" data-filter="normal"><i data-lucide="images" aria-hidden="true"></i><span>Cards normais</span></button>
+        <button class="library-action is-active" type="button" data-view="all"><i data-lucide="layout-grid" aria-hidden="true"></i><span>Ver tudo</span></button>
+        <button class="library-action" type="button" data-view="360"><i data-lucide="orbit" aria-hidden="true"></i><span>360°</span></button>
+        <button class="library-action" type="button" data-view="normal"><i data-lucide="images" aria-hidden="true"></i><span>Cards normais</span></button>
+        <button class="library-action" type="button" data-view="feed"><i data-lucide="rss" aria-hidden="true"></i><span>Feed</span></button>
       </div>
     </section>
 
@@ -49,9 +50,13 @@
           <p class="eyebrow">DESCOBERTA</p>
           <h2><i data-lucide="sparkles" aria-hidden="true"></i> Descubra</h2>
         </div>
-        <span id="result-count" class="count">0 itens</span>
+        <div class="discover-heading-tools"><span id="result-count" class="count">0 itens</span></div>
       </div>
-      <div id="discover-grid" class="discover-grid" aria-live="polite"></div>
+      <div class="discover-carousel-wrap">
+        <button id="discover-prev" class="carousel-arrow" type="button" aria-label="Descoberta anterior"><i data-lucide="chevron-left" aria-hidden="true"></i></button>
+        <div id="discover-grid" class="discover-grid" aria-live="polite"></div>
+        <button id="discover-next" class="carousel-arrow" type="button" aria-label="Próxima descoberta"><i data-lucide="chevron-right" aria-hidden="true"></i></button>
+      </div>
     </section>
 
     <section id="panorama-section" class="panorama-section" aria-label="Experiências 360°">
@@ -95,6 +100,6 @@
   </script>
   <script type="module" src="viewer.js?v=6"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
-  <script src="app.js?v=7" defer></script>
+  <script src="app.js?v=8" defer></script>
 </body>
 </html>
