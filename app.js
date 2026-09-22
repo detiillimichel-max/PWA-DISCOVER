@@ -163,13 +163,13 @@ function renderFeed(items) {
     return;
   }
 
-  feedIndex = Math.max(0, Math.min(feedIndex, items.length - 1));
   grid.innerHTML = `
-    <div class="feed-counter">${feedIndex + 1} / ${items.length}</div>
-    ${renderCard(items[feedIndex], { feed: true })}
-    <div class="feed-controls">
-      <button class="carousel-arrow" type="button" data-feed-dir="-1" aria-label="Card anterior"><i data-lucide="chevron-up" aria-hidden="true"></i></button>
-      <button class="carousel-arrow" type="button" data-feed-dir="1" aria-label="Próximo card"><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+    <div class="feed-intro">
+      <i data-lucide="rss" aria-hidden="true"></i>
+      <div><strong>Feed DISCOVER</strong><span>${items.length} cards disponíveis</span></div>
+    </div>
+    <div class="feed-list">
+      ${items.map(item => renderCard(item, { feed: true })).join("")}
     </div>
   `;
   renderIcons();
@@ -369,15 +369,6 @@ async function loadCatalog() {
   }
 }
 
-$("#search").addEventListener("input", event => {
-  const term = event.target.value;
-  const cached = readSearchCache(term);
-  const results = cached || searchCatalog(term);
-
-  if (!cached) writeSearchCache(term, results);
-  render(filteredCatalog(term));
-});
-
 $("#discover-grid").addEventListener("click", async event => {
   const panoramaButton = event.target.closest(".panorama-button");
   if (panoramaButton) {
@@ -411,20 +402,6 @@ $("#discover-grid").addEventListener("click", async event => {
     return;
   }
 
-  const carouselButton = event.target.closest(".carousel-arrow");
-  if (carouselButton && activeView === "discover") {
-    const items = filteredCatalog($("#search").value);
-    carouselIndex = Math.max(0, Math.min(carouselIndex + Number(carouselButton.dataset.carouselDir || 0), items.length - 1));
-    render(items);
-    return;
-  }
-
-  const feedButton = event.target.closest("[data-feed-dir]");
-  if (feedButton && activeView === "feed") {
-    const items = filteredCatalog($("#search").value);
-    feedIndex = Math.max(0, Math.min(feedIndex + Number(feedButton.dataset.feedDir || 0), items.length - 1));
-    render(items);
-  }
 });
 
 document.querySelectorAll(".library-action").forEach(button => {
@@ -462,7 +439,6 @@ $("#search").addEventListener("input", event => {
 
   if (!cached) writeSearchCache(term, results);
   carouselIndex = 0;
-  feedIndex = 0;
   render(results.filter(item => {
     if (activeView === "360") return item.type === "panorama360";
     if (activeView === "normal") return item.type !== "panorama360";
