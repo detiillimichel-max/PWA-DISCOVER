@@ -429,6 +429,48 @@ async function loadCatalog() {
   }
 }
 
+function readCardLike(id) {
+  try { return localStorage.getItem("discover-like:" + id) === "1"; } catch { return false; }
+}
+
+function writeCardLike(id, value) {
+  try { localStorage.setItem("discover-like:" + id, value ? "1" : "0"); } catch {}
+}
+
+function toggleLikeFromCard(item, button) {
+  const next = !readCardLike(item.id);
+  writeCardLike(item.id, next);
+  button.classList.toggle("is-liked", next);
+  button.querySelector("span").textContent = next ? "Curtido" : "Curtir";
+  renderIcons();
+}
+
+async function shareFeedFromCard(item, button) {
+  const shareData = {
+    title: item.title || "DISCOVER",
+    text: item.description || "Descoberta no DISCOVER",
+    url: item.original || window.location.href
+  };
+
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData);
+    } else if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(shareData.url);
+      button.querySelector("span").textContent = "Copiado";
+      renderIcons();
+      window.setTimeout(() => {
+        if (button.isConnected) {
+          button.querySelector("span").textContent = "Compartilhar";
+          renderIcons();
+        }
+      }, 1800);
+    }
+  } catch (error) {
+    if (error?.name !== "AbortError") console.error(error);
+  }
+}
+
 $("#discover-grid").addEventListener("click", async event => {
   const panoramaButton = event.target.closest(".panorama-button");
   if (panoramaButton) {
@@ -437,13 +479,40 @@ $("#discover-grid").addEventListener("click", async event => {
     return;
   }
 
+  const slideAction = event.target.closest("[data-feed-id][class*='feed-inline-'], .feed-open-fullscreen");
+  if (slideAction) {
+    const item = catalog.find(entry => entry.id === slideAction.dataset.feedId);
+    if (!item) return;
+
+    if (slideAction.classList.contains("feed-inline-gyro") && item.type === "panorama360") {
+      window.DISCOVER360?.openFeed(item, { index: catalog.findIndex(entry => entry.id === item.id), total: catalog.length, startMode: "gyro" });
+      return;
+    }
+
+    if (slideAction.classList.contains("feed-inline-360") || slideAction.classList.contains("feed-open-fullscreen")) {
+      window.DISCOVER360?.openFeed(item, { index: catalog.findIndex(entry => entry.id === item.id), total: catalog.length, startMode: "touch" });
+      return;
+    }
+
+    if (slideAction.classList.contains("feed-inline-share")) {
+      shareFeedFromCard(item, slideAction);
+      return;
+    }
+
+    if (slideAction.classList.contains("feed-inline-like")) {
+      toggleLikeFromCard(item, slideAction);
+      return;
+    }
+  }
+
   const feedImage = event.target.closest(".feed-open-image");
   if (feedImage) {
     const item = catalog.find(entry => entry.id === feedImage.dataset.feedId);
     if (item && window.DISCOVER360?.openFeed) {
       window.DISCOVER360.openFeed(item, {
         index: catalog.findIndex(entry => entry.id === item.id),
-        total: catalog.length
+        total: catalog.length,
+        startMode: item.type === "panorama360" ? "touch" : "image"
       });
     }
     return;
