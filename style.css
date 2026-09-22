@@ -48,3 +48,38 @@ footer{max-width:1100px;margin:auto;padding:20px;color:#69758d;font-size:.75rem;
 .feed-intro{display:flex;align-items:center;gap:12px;padding:14px 16px;margin-bottom:12px;border:1px solid #252b38;border-radius:18px;background:#11151d;color:#b8c5dc}.feed-intro>svg{width:22px;height:22px}.feed-intro div{display:flex;flex-direction:column;gap:2px}.feed-intro span{font-size:.78rem;color:#7f8ba3}.feed-list{display:grid;gap:16px}.feed-card .share-button{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;margin-top:10px;border:1px solid #3c4962;border-radius:13px;background:#111a2a;color:#dce5f5;padding:10px 13px;font:inherit;font-weight:700;cursor:pointer}.share-button svg{width:17px;height:17px}.feed-card .card-media{aspect-ratio:16/10}
 @media(max-width:520px){.library-nav{gap:7px}.library-action{min-height:74px;padding:8px 4px}.library-action span{font-size:.75rem}.discover-carousel-wrap{grid-template-columns:34px minmax(0,1fr) 34px;gap:5px}.carousel-arrow{width:34px;height:34px}.carousel-arrow svg{width:17px;height:17px}}
 @media(min-width:760px){.feed-list{grid-template-columns:repeat(2,1fr)}}
+
+
+.feed-open-image{cursor:pointer}
+.feed-viewer-modal{position:fixed;inset:0;z-index:2000;display:none;background:#05070b;color:#f4f6fb;overflow:hidden}
+.feed-viewer-modal.is-open{display:block}
+.feed-viewer-top{position:absolute;z-index:5;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:calc(12px + env(safe-area-inset-top)) 16px 14px;background:linear-gradient(180deg,#05070bdd 0%,#05070b88 72%,transparent 100%)}
+.feed-viewer-title-wrap{min-width:0;padding-right:52px}
+.feed-viewer-title-wrap .eyebrow{margin-bottom:4px}
+.feed-viewer-title-wrap h2{font-size:1rem;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.feed-viewer-close{width:46px;height:46px;flex:0 0 46px;border:1px solid #ffffff2b;border-radius:50%;background:#11151dcc;color:#fff;font-size:1.8rem;line-height:1;cursor:pointer;backdrop-filter:blur(12px)}
+.feed-viewer-media{position:absolute;inset:0;background:#05070b;display:grid;place-items:center}
+.feed-viewer-image{width:100%;height:100%;object-fit:contain;display:block}
+.feed-viewer-panorama{position:absolute;inset:0;background:#000}
+.feed-viewer-panorama[hidden],.feed-viewer-image[hidden]{display:none}
+.feed-viewer-gradient{position:absolute;inset:auto 0 0;height:34%;pointer-events:none;background:linear-gradient(0deg,#05070be8 0%,#05070b66 42%,transparent 100%)}
+.feed-viewer-rail{position:absolute;z-index:6;right:12px;bottom:calc(86px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:12px}
+.feed-action{width:54px;min-height:54px;padding:7px 4px;border:1px solid #ffffff26;border-radius:18px;background:#0d111bcc;color:#f4f6fb;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font:inherit;font-size:.62rem;font-weight:700;cursor:pointer;backdrop-filter:blur(12px);box-shadow:0 8px 28px #0007}
+.feed-action svg{width:23px;height:23px;stroke-width:2}
+.feed-action:active{transform:scale(.95)}
+.feed-action.is-active{background:#1b3550;border-color:#5d87b8;box-shadow:0 0 0 2px #ffffff12,0 8px 28px #0008}
+.feed-action:disabled{opacity:.38;cursor:default}
+.feed-action-like.is-liked{background:#203b5a;border-color:#77a7df}
+.feed-viewer-bottom{position:absolute;z-index:6;left:16px;right:92px;bottom:calc(16px + env(safe-area-inset-bottom));display:flex;align-items:end;justify-content:space-between;gap:12px;pointer-events:none}
+.feed-viewer-bottom>div{display:flex;flex-direction:column;gap:4px;text-shadow:0 2px 12px #000}
+.feed-viewer-bottom strong{font-size:.98rem;line-height:1.25}
+.feed-viewer-bottom span{font-size:.72rem;color:#b5bfd1}
+.feed-viewer-position{white-space:nowrap;font-weight:700;color:#dce5f5!important}
+.feed-viewer-modal .psv-navbar{bottom:0}
+.feed-viewer-modal .psv-container{background:#000}
+@media(max-width:520px){
+  .feed-viewer-top{padding-left:14px;padding-right:14px}
+  .feed-viewer-rail{right:9px;bottom:calc(86px + env(safe-area-inset-bottom));gap:9px}
+  .feed-action{width:52px;min-height:52px;border-radius:17px}
+  .feed-viewer-bottom{left:14px;right:76px;bottom:calc(14px + env(safe-area-inset-bottom))}
+}
