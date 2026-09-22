@@ -252,3 +252,11 @@ button{
   body.feed-mode .feed-slide-copy h3{font-size:1.05rem}
   body.feed-mode .feed-slide-copy p{font-size:.84rem}
 }
+
+.viewer-header-actions{display:flex;align-items:center;gap:8px}
+.viewer-gyro{min-height:44px;padding:8px 12px;border:1px solid #303747;border-radius:14px;background:#11151d;color:#fff;display:inline-flex;align-items:center;gap:6px;font:inherit;font-weight:700;cursor:pointer}
+.viewer-gyro svg{width:19px;height:19px}
+.viewer-gyro.is-active{background:#1b3550;border-color:#5d87b8}
+.feed-slide-image--contain{object-fit:contain!important;background:#000}
+.viewer .psv-container,.viewer .psv-canvas-container{width:100%!important;height:100%!important}
+.viewer .psv-container{background:#000}
