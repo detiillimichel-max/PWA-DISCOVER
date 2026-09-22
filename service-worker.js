@@ -1,6 +1,6 @@
-const VERSION = "v3";
+const VERSION = "v4";
 const CACHE = `discover-shell-${VERSION}`;
-const CATALOG_CACHE = "discover-catalog-v3";
+const CATALOG_CACHE = "discover-catalog-v4";
 
 const ASSETS = [
   "./",
