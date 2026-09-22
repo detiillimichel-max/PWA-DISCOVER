@@ -7,23 +7,37 @@
   <meta name="description" content="DISCOVER — catálogo visual de imagens, cultura, história e experiências 360°.">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.15.1/index.css">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
   <title>DISCOVER</title>
 </head>
 <body>
   <header class="topbar">
     <div>
       <p class="eyebrow">PWA • MODO CINEMA</p>
-      <h1>DISCOVER <span>🌎</span></h1>
+      <h1>DISCOVER <i data-lucide="search" class="title-icon" aria-hidden="true"></i></h1>
       <p class="subtitle">Descubra imagens, cultura, história e experiências visuais.</p>
     </div>
   </header>
 
   <main class="app-shell">
+    <section class="library-section" aria-label="Biblioteca">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">BIBLIOTECA</p>
+          <h2><i data-lucide="library" aria-hidden="true"></i> Biblioteca</h2>
+        </div>
+      </div>
+      <div class="library-nav">
+        <button class="library-action is-active" type="button" data-filter="all"><i data-lucide="layout-grid" aria-hidden="true"></i><span>Ver tudo</span></button>
+        <button class="library-action" type="button" data-filter="360"><i data-lucide="orbit" aria-hidden="true"></i><span>360°</span></button>
+        <button class="library-action" type="button" data-filter="normal"><i data-lucide="images" aria-hidden="true"></i><span>Cards normais</span></button>
+      </div>
+    </section>
+
     <section class="search-card" aria-label="Busca">
       <label for="search">O que você quer descobrir?</label>
       <div class="search-box">
-        <span aria-hidden="true">⌕</span>
+        <i data-lucide="search" aria-hidden="true"></i>
         <input id="search" type="search" placeholder="Ex.: Marte, museu, Egito..." autocomplete="off">
       </div>
       <p id="catalog-status" class="status">Catálogo local carregando…</p>
@@ -32,14 +46,26 @@
     <section>
       <div class="section-heading">
         <div>
-          <p class="eyebrow">CATÁLOGO</p>
-          <h2>Descobertas</h2>
+          <p class="eyebrow">DESCOBERTA</p>
+          <h2><i data-lucide="sparkles" aria-hidden="true"></i> Descubra</h2>
         </div>
         <span id="result-count" class="count">0 itens</span>
       </div>
       <div id="discover-grid" class="discover-grid" aria-live="polite"></div>
     </section>
   </main>
+
+    <section id="panorama-section" class="panorama-section" aria-label="Experiências 360°">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">IMERSÃO</p>
+          <h2><i data-lucide="orbit" aria-hidden="true"></i> Experiências 360°</h2>
+          <p class="section-description">Explore lugares, Marte, patrimônio e paisagens em 360 graus.</p>
+        </div>
+        <button id="show-all-360" class="section-link" type="button">Ver todas <i data-lucide="arrow-up-right" aria-hidden="true"></i></button>
+      </div>
+      <div id="panorama-grid" class="panorama-grid"></div>
+    </section>
 
   <div id="viewer-modal" class="viewer-modal" aria-hidden="true">
     <div class="viewer-header">
@@ -68,6 +94,7 @@
     }
   </script>
   <script type="module" src="viewer.js?v=6"></script>
-  <script src="app.js?v=6" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="app.js?v=7" defer></script>
 </body>
 </html>
