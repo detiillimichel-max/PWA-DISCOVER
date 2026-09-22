@@ -335,8 +335,8 @@ def _strip_html(value):
 
 def _clean_commons_text(value, fallback):
     text = _strip_html(value)
-    text = re.sub(r"\\[\\[([^\\]|]+)(?:\\|([^\\]]+))?\\]\\]", r"\\2", text)
-    text = re.sub(r"\\[\\[([^\\]]+)\\]\\]", r"\\1", text)
+    text = re.sub(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]", r"\2", text)
+    text = re.sub(r"\[\[([^\]]+)\]\]", r"\1", text)
     return " ".join(text.split()) or fallback
 
 
