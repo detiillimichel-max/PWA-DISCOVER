@@ -75,10 +75,7 @@ function searchCatalog(term) {
       const text = searchableText(item);
       return tokens.every(token => text.includes(token));
     })
-    .map(item => ({
-      item,
-      score: searchScore(item, query, tokens)
-    }))
+    .map(item => ({ item, score: searchScore(item, query, tokens) }))
     .sort((a, b) => b.score - a.score)
     .map(result => result.item);
 }
@@ -123,6 +120,13 @@ function render(items) {
         <p>${escapeHtml(item.description || "")}</p>
         <span class="tag">${escapeHtml(item.type || "discover")}</span>
         <span class="tag">${escapeHtml(item.source || "catálogo local")}</span>
+        ${item.type === "panorama360" && item.panorama ? `
+          <button
+            class="panorama-button"
+            type="button"
+            data-panorama-id="${escapeHtml(item.id)}"
+          >🌀 Abrir experiência 360°</button>
+        ` : ""}
       </div>
     </article>
   `).join("");
@@ -170,9 +174,7 @@ function writeSearchCache(term, items) {
       cacheKey(term),
       JSON.stringify({ timestamp: Date.now(), items })
     );
-  } catch {
-    // O cache é opcional.
-  }
+  } catch {}
 }
 
 function readCatalogMeta() {
@@ -190,14 +192,9 @@ function writeCatalogMeta(extra = {}) {
   try {
     localStorage.setItem(
       CONFIG.CATALOG_CACHE_META_KEY,
-      JSON.stringify({
-        timestamp: Date.now(),
-        ...extra
-      })
+      JSON.stringify({ timestamp: Date.now(), ...extra })
     );
-  } catch {
-    // Metadados são opcionais.
-  }
+  } catch {}
 }
 
 async function readCatalogCache() {
@@ -230,9 +227,7 @@ async function writeCatalogCache(data) {
       version: data.version ?? null,
       itemCount: Array.isArray(data.items) ? data.items.length : 0
     });
-  } catch {
-    // O cache é opcional; a rede continua sendo usada normalmente.
-  }
+  } catch {}
 }
 
 function isCatalogCacheFresh() {
@@ -250,50 +245,33 @@ async function loadCatalog() {
 
   if (cachedCatalog && isCatalogCacheFresh()) {
     catalog = cachedCatalog.items;
-    setCatalogStatus(
-      `${catalog.length} itens no catálogo local • cache ativo`
-    );
+    setCatalogStatus(`${catalog.length} itens no catálogo local • cache ativo`);
     render(catalog);
     return;
   }
 
   if (cachedCatalog) {
     catalog = cachedCatalog.items;
-    setCatalogStatus(
-      `${catalog.length} itens no catálogo local • cache expirado • atualizando…`
-    );
+    setCatalogStatus(`${catalog.length} itens no catálogo local • cache expirado • atualizando…`);
     render(catalog);
   }
 
   try {
-    const response = await fetch(CONFIG.CATALOG_URL, {
-      cache: "no-cache"
-    });
-
-    if (!response.ok) {
-      throw new Error(`Catálogo HTTP ${response.status}`);
-    }
+    const response = await fetch(CONFIG.CATALOG_URL, { cache: "no-cache" });
+    if (!response.ok) throw new Error(`Catálogo HTTP ${response.status}`);
 
     const data = await response.json();
-
-    if (!Array.isArray(data.items)) {
-      throw new Error("Formato de catálogo inválido");
-    }
+    if (!Array.isArray(data.items)) throw new Error("Formato de catálogo inválido");
 
     catalog = data.items;
     await writeCatalogCache(data);
-
-    setCatalogStatus(
-      `${catalog.length} itens no catálogo local • catálogo atualizado`
-    );
+    setCatalogStatus(`${catalog.length} itens no catálogo local • catálogo atualizado`);
     render(catalog);
   } catch (error) {
     console.error(error);
 
     if (cachedCatalog) {
-      setCatalogStatus(
-        `${catalog.length} itens no catálogo local • usando cache`
-      );
+      setCatalogStatus(`${catalog.length} itens no catálogo local • usando cache`);
       render(catalog);
       return;
     }
@@ -309,11 +287,18 @@ $("#search").addEventListener("input", event => {
   const cached = readSearchCache(term);
   const results = cached || searchCatalog(term);
 
-  if (!cached) {
-    writeSearchCache(term, results);
-  }
-
+  if (!cached) writeSearchCache(term, results);
   render(results);
+});
+
+$("#discover-grid").addEventListener("click", event => {
+  const button = event.target.closest(".panorama-button");
+  if (!button) return;
+
+  const item = catalog.find(entry => entry.id === button.dataset.panoramaId);
+  if (item && window.DISCOVER360?.open) {
+    window.DISCOVER360.open(item);
+  }
 });
 
 loadCatalog();
