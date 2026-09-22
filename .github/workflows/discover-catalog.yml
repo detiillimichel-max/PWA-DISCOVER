@@ -1,4 +1,4 @@
-name: DISCOVER • Atualizar catálogo
+name: DISCOVER • Modo Cinema
 
 on:
   workflow_dispatch:
@@ -9,13 +9,13 @@ permissions:
   contents: write
 
 concurrency:
-  group: discover-catalog-refresh
+  group: discover-cinema-refresh
   cancel-in-progress: true
 
 jobs:
-  refresh-catalog:
+  cinema-refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
 
     steps:
       - name: Baixar repositório
@@ -26,12 +26,15 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Atualizar catálogo
+      - name: 🎬 Executar Modo Cinema
         env:
           NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+          DPLA_API_KEY: ${{ secrets.DPLA_API_KEY }}
+          EUROPEANA_API_KEY: ${{ secrets.EUROPEANA_API_KEY }}
+          NARA_API_KEY: ${{ secrets.NARA_API_KEY }}
         run: python scripts/catalog_pipeline.py
 
-      - name: Publicar catálogo e estado de proteção
+      - name: 📦 Publicar catálogo e proteção
         run: |
           if git diff --quiet -- catalog/discover.json catalog/.api-usage.json; then
             echo "Nenhuma alteração no catálogo ou no estado de proteção."
@@ -41,5 +44,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add catalog/discover.json catalog/.api-usage.json
-          git commit -m "chore: refresh DISCOVER catalog and API guard"
+          git commit -m "chore: run DISCOVER Cinema pipeline"
           git push
