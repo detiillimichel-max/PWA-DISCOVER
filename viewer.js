@@ -1,4 +1,5 @@
 import { Viewer } from "@photo-sphere-viewer/core";
+import { GyroscopePlugin } from "@photo-sphere-viewer/gyroscope-plugin";
 
 let viewer = null;
 
@@ -45,7 +46,18 @@ async function openViewer(item) {
       mousewheel: true,
       touchmoveTwoFingers: false,
       keyboard: "fullscreen",
-      navbar: ["zoom", "move", "fullscreen"]
+      navbar: ["zoom", "move", "gyroscope", "fullscreen"],
+      plugins: [
+        [GyroscopePlugin, {
+          moveMode: "smooth",
+          touchmove: true,
+          roll: true,
+          absolutePosition: false
+        }]
+      ],
+      lang: {
+        gyroscope: "Giroscópio"
+      }
     });
 
     viewer.addEventListener("panorama-error", () => {
