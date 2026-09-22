@@ -4,24 +4,80 @@ import time
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "catalog" / "discover.json"
 CONFIG_PATH = ROOT / "catalog" / "config.json"
+USAGE_PATH = ROOT / "catalog" / ".api-usage.json"
 
 REQUIRED_ITEM_FIELDS = ("id", "title", "type", "source", "description")
 
 
+class DailyLimitReached(RuntimeError):
+    pass
+
+
 class RateLimiter:
-    def __init__(self, per_run: int, min_interval_ms: int):
+    def __init__(
+        self,
+        per_run: int,
+        max_per_day: int,
+        min_interval_ms: int,
+        backoff_seconds: int,
+    ):
         self.per_run = max(0, int(per_run))
+        self.max_per_day = max(0, int(max_per_day))
         self.min_interval_ms = max(0, int(min_interval_ms))
+        self.backoff_seconds = max(0, int(backoff_seconds))
         self.requests = 0
         self.last_request = 0.0
+        self.usage = self._load_usage()
 
-    def get_json(self, url: str):
+    def _today(self):
+        return time.strftime("%Y-%m-%d", time.gmtime())
+
+    def _load_usage(self):
+        today = self._today()
+
+        if not USAGE_PATH.exists():
+            return {"date_utc": today, "requests": 0}
+
+        try:
+            data = json.loads(USAGE_PATH.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            print("[RATE] Estado diário inválido; iniciando contador em zero.")
+            return {"date_utc": today, "requests": 0}
+
+        if data.get("date_utc") != today:
+            return {"date_utc": today, "requests": 0}
+
+        return {
+            "date_utc": today,
+            "requests": max(0, int(data.get("requests", 0)))
+        }
+
+    def _save_usage(self):
+        USAGE_PATH.write_text(
+            json.dumps(self.usage, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8"
+        )
+
+    def _reserve_request(self):
         if self.requests >= self.per_run:
             raise RuntimeError("limite de requisições por execução atingido")
+
+        if self.usage["requests"] >= self.max_per_day:
+            raise DailyLimitReached(
+                "limite diário de requisições atingido"
+            )
+
+        self.usage["requests"] += 1
+        self.requests += 1
+        self._save_usage()
+
+    def get_json(self, url: str):
+        self._reserve_request()
 
         elapsed_ms = (time.monotonic() - self.last_request) * 1000
         if self.last_request and elapsed_ms < self.min_interval_ms:
@@ -34,15 +90,29 @@ class RateLimiter:
 
         try:
             with urlopen(request, timeout=20) as response:
-                if response.status == 429:
-                    raise RuntimeError("NASA respondeu HTTP 429 (rate limit)")
-                self.requests += 1
-                self.last_request = time.monotonic()
                 return json.load(response)
-        except Exception:
-            self.requests += 1
-            self.last_request = time.monotonic()
+        except HTTPError as exc:
+            if exc.code == 429:
+                retry_after = exc.headers.get("Retry-After")
+                wait_seconds = self.backoff_seconds
+
+                if retry_after:
+                    try:
+                        wait_seconds = max(wait_seconds, int(retry_after))
+                    except ValueError:
+                        pass
+
+                print(
+                    f"[RATE] HTTP 429 recebido. "
+                    f"Backoff sugerido: {wait_seconds}s."
+                )
+                if wait_seconds:
+                    time.sleep(wait_seconds)
+
+                raise RuntimeError("API respondeu HTTP 429 (rate limit)") from exc
             raise
+        finally:
+            self.last_request = time.monotonic()
 
 
 def fail(message: str) -> None:
@@ -102,6 +172,9 @@ def fetch_nasa_items(limiter: RateLimiter):
 
     try:
         data = limiter.get_json(url)
+    except DailyLimitReached as exc:
+        print(f"[NASA] {exc}; consulta interrompida com segurança.")
+        return []
     except Exception as exc:
         print(f"[NASA] Consulta não incorporada: {exc}")
         return []
@@ -162,8 +235,23 @@ def main():
     config, catalog = load_files()
 
     per_run = int(config.get("api_rate_limit_per_run", 20))
+    max_per_day = int(config.get("api_max_requests_per_day", 100))
     min_interval_ms = int(config.get("api_min_interval_ms", 1000))
-    limiter = RateLimiter(per_run, min_interval_ms)
+    backoff_seconds = int(config.get("api_backoff_seconds", 5))
+
+    if per_run <= 0 or max_per_day <= 0:
+        fail("os limites de API precisam ser maiores que zero.")
+
+    limiter = RateLimiter(
+        per_run=per_run,
+        max_per_day=max_per_day,
+        min_interval_ms=min_interval_ms,
+        backoff_seconds=backoff_seconds,
+    )
+
+    print(
+        f"[RATE] Uso diário UTC: {limiter.usage['requests']}/{max_per_day}"
+    )
 
     if config.get("sources", {}).get("nasa") is True:
         nasa_items = fetch_nasa_items(limiter)
@@ -184,8 +272,10 @@ def main():
     print("[DISCOVER] Catálogo válido.")
     print(f"[DISCOVER] Itens: {len(catalog['items'])}")
     print(f"[DISCOVER] Requisições nesta execução: {limiter.requests}")
+    print(f"[DISCOVER] Uso diário UTC: {limiter.usage['requests']}/{max_per_day}")
     print(f"[DISCOVER] Limite por execução: {per_run}")
     print(f"[DISCOVER] Intervalo mínimo: {min_interval_ms} ms")
+    print(f"[DISCOVER] Backoff 429: {backoff_seconds} s")
 
 
 if __name__ == "__main__":
