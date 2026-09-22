@@ -1,7 +1,8 @@
 const CONFIG = Object.freeze({
   CATALOG_URL: "./catalog/discover.json",
-  CATALOG_CACHE_NAME: "discover-catalog-v1",
+  CATALOG_CACHE_NAME: "discover-catalog-v2",
   CATALOG_CACHE_TTL_HOURS: 24,
+  CATALOG_CACHE_META_KEY: "discover-catalog-cache-meta-v2",
   SEARCH_CACHE_TTL_HOURS: 6,
   SEARCH_CACHE_PREFIX: "discover-search-v2:",
   SEARCH_FIELDS: ["title", "description", "type", "source", "tags"]
@@ -167,26 +168,140 @@ function writeSearchCache(term, items) {
   try {
     localStorage.setItem(
       cacheKey(term),
-      JSON.stringify({
-        timestamp: Date.now(),
-        items
-      })
+      JSON.stringify({ timestamp: Date.now(), items })
     );
   } catch {
-    // O cache é opcional: a busca continua funcionando sem localStorage.
+    // O cache é opcional.
   }
 }
 
-async function loadCatalog() {
-  const response = await fetch(CONFIG.CATALOG_URL, { cache: "no-cache" });
+function readCatalogMeta() {
+  try {
+    const meta = JSON.parse(
+      localStorage.getItem(CONFIG.CATALOG_CACHE_META_KEY) || "null"
+    );
+    return meta && Number.isFinite(meta.timestamp) ? meta : null;
+  } catch {
+    return null;
+  }
+}
 
-  if (!response.ok) {
-    throw new Error(`Catálogo HTTP ${response.status}`);
+function writeCatalogMeta(extra = {}) {
+  try {
+    localStorage.setItem(
+      CONFIG.CATALOG_CACHE_META_KEY,
+      JSON.stringify({
+        timestamp: Date.now(),
+        ...extra
+      })
+    );
+  } catch {
+    // Metadados são opcionais.
+  }
+}
+
+async function readCatalogCache() {
+  if (!("caches" in window)) return null;
+
+  try {
+    const cache = await caches.open(CONFIG.CATALOG_CACHE_NAME);
+    const response = await cache.match(CONFIG.CATALOG_URL);
+    if (!response) return null;
+
+    const data = await response.clone().json();
+    if (!Array.isArray(data.items)) return null;
+
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+async function writeCatalogCache(data) {
+  if (!("caches" in window)) return;
+
+  try {
+    const cache = await caches.open(CONFIG.CATALOG_CACHE_NAME);
+    const response = new Response(JSON.stringify(data), {
+      headers: { "Content-Type": "application/json; charset=utf-8" }
+    });
+    await cache.put(CONFIG.CATALOG_URL, response);
+    writeCatalogMeta({
+      version: data.version ?? null,
+      itemCount: Array.isArray(data.items) ? data.items.length : 0
+    });
+  } catch {
+    // O cache é opcional; a rede continua sendo usada normalmente.
+  }
+}
+
+function isCatalogCacheFresh() {
+  const meta = readCatalogMeta();
+  if (!meta) return false;
+  return Date.now() - meta.timestamp <= CONFIG.CATALOG_CACHE_TTL_HOURS * 3600000;
+}
+
+function setCatalogStatus(text) {
+  $("#catalog-status").textContent = text;
+}
+
+async function loadCatalog() {
+  const cachedCatalog = await readCatalogCache();
+
+  if (cachedCatalog && isCatalogCacheFresh()) {
+    catalog = cachedCatalog.items;
+    setCatalogStatus(
+      `${catalog.length} itens no catálogo local • cache ativo`
+    );
+    render(catalog);
+    return;
   }
 
-  const data = await response.json();
-  catalog = Array.isArray(data.items) ? data.items : [];
-  render(catalog);
+  if (cachedCatalog) {
+    catalog = cachedCatalog.items;
+    setCatalogStatus(
+      `${catalog.length} itens no catálogo local • cache expirado • atualizando…`
+    );
+    render(catalog);
+  }
+
+  try {
+    const response = await fetch(CONFIG.CATALOG_URL, {
+      cache: "no-cache"
+    });
+
+    if (!response.ok) {
+      throw new Error(`Catálogo HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data.items)) {
+      throw new Error("Formato de catálogo inválido");
+    }
+
+    catalog = data.items;
+    await writeCatalogCache(data);
+
+    setCatalogStatus(
+      `${catalog.length} itens no catálogo local • catálogo atualizado`
+    );
+    render(catalog);
+  } catch (error) {
+    console.error(error);
+
+    if (cachedCatalog) {
+      setCatalogStatus(
+        `${catalog.length} itens no catálogo local • usando cache`
+      );
+      render(catalog);
+      return;
+    }
+
+    setCatalogStatus("Catálogo indisponível no momento.");
+    $("#discover-grid").innerHTML =
+      '<div class="empty">Não foi possível carregar o catálogo local.</div>';
+  }
 }
 
 $("#search").addEventListener("input", event => {
@@ -201,13 +316,7 @@ $("#search").addEventListener("input", event => {
   render(results);
 });
 
-loadCatalog().catch(error => {
-  console.error(error);
-  $("#catalog-status").textContent =
-    "Não foi possível carregar o catálogo local.";
-  $("#discover-grid").innerHTML =
-    '<div class="empty">Catálogo indisponível no momento.</div>';
-});
+loadCatalog();
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
