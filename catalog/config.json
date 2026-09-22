@@ -1,5 +1,12 @@
 {
-  "catalog_refresh_hours": 12,
+  "cinema": {
+    "enabled": true,
+    "catalog_refresh_hours": 12,
+    "max_catalog_items": 80,
+    "max_items_per_source": 20,
+    "deduplicate": true,
+    "keep_local_items": true
+  },
   "search_cache_ttl_hours": 6,
   "catalog_cache_ttl_hours": 24,
   "api_rate_limit_per_run": 20,
