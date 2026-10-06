@@ -1,6 +1,6 @@
 {
-  "version": 33,
-  "generated_at": "2026-10-06T03:47:36Z",
+  "version": 34,
+  "generated_at": "2026-10-06T17:35:11Z",
   "items": [
     {
       "id": "demo-egypt",
@@ -815,6 +815,42 @@
       }
     },
     {
+      "id": "dpla-ff84a911a403999985595e41c732871f",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-B1284A18E9752-000001",
+      "original": "http://n2t.net/ark:/65665/kq45d7b6f7c-31ba-4db6-a52c-897915a9e0d4",
+      "description": [
+        "Research in Progress",
+        "Vertical rectangle. Circular relief, as described in -218"
+      ],
+      "author": "Robert Ingersoll Aitken, American, 1878–1949",
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia",
+        "Aitken, Robert Ingersoll"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "ff84a911a403999985595e41c732871f",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Mrs. Robert I. Aitken"
+        ]
+      }
+    },
+    {
       "id": "dpla-f00a118044ca5e9fcc7fe2c42c093046",
       "title": [
         "Photograph"
@@ -970,6 +1006,46 @@
       }
     },
     {
+      "id": "dpla-e35999af78fcd7c754fc9f18570c4998",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-C8A318937F152-000001",
+      "original": "http://n2t.net/ark:/65665/kq40c4302de-20c6-4293-8274-f73ac6342d8f",
+      "description": [
+        "Research in Progress"
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "e35999af78fcd7c754fc9f18570c4998",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Winchester Fitch"
+        ]
+      }
+    },
+    {
       "id": "dpla-e2cede7ba86cbdddb9a3edce498c51ed",
       "title": [
         "Photograph"
@@ -1002,6 +1078,41 @@
         "provider": "Smithsonian Institution",
         "rights": [
           "Gift of Madame Hector Guimard"
+        ]
+      }
+    },
+    {
+      "id": "dpla-dad1897e07fb59870151930845552368",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-81F0FD90EF572-000001",
+      "original": "http://n2t.net/ark:/65665/kq44acd9d47-12fb-49c3-ace6-c234c735c549",
+      "description": [
+        "Research in Progress"
+      ],
+      "author": "Whitney Warren Jr., American, 1864–1943",
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia",
+        "Warren, Whitney"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "dad1897e07fb59870151930845552368",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Mrs. William Greenough"
         ]
       }
     },
@@ -1276,6 +1387,86 @@
       }
     },
     {
+      "id": "dpla-b04751126d34dba3dac38d9ab41ec21c",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-94841BB4139E2-000001",
+      "original": "http://n2t.net/ark:/65665/kq47e16d86a-d34e-4fc2-9438-fb6536b4fe5d",
+      "description": [
+        "Research in Progress"
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "b04751126d34dba3dac38d9ab41ec21c",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Newton P. Bevin"
+        ]
+      }
+    },
+    {
+      "id": "dpla-8baba62d341309919fe792589af5e28b",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-81F68F73C0422-000001",
+      "original": "http://n2t.net/ark:/65665/kq4052618c5-69a1-4234-9c30-fdd9102d0d06",
+      "description": [
+        "Research in Progress"
+      ],
+      "author": {
+        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+        "exactMatch": [
+          "http://www.wikidata.org/entity/Q1129820"
+        ],
+        "name": "Cooper Hewitt, Smithsonian Design Museum"
+      },
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "8baba62d341309919fe792589af5e28b",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Allyn Cox"
+        ]
+      }
+    },
+    {
       "id": "dpla-8a7c899d5631bbb5df3c50cba5195f4c",
       "title": [
         "Photograph"
@@ -1312,6 +1503,42 @@
       }
     },
     {
+      "id": "dpla-899d3e27f0a8d1e445e60c65981b918b",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-AA43D829271B2-000001",
+      "original": "http://n2t.net/ark:/65665/kq4f64ebc27-1e89-4682-aed1-b8159da0fa7c",
+      "description": [
+        "Research in Progress",
+        "Horizontal rectangle. The group is shown from the back. The figure of Michelangelo is shown with his left leg kneeling on the torso of the statue of ''Day''.See drawings (1959-87-2 to -10)"
+      ],
+      "author": "Robert Ingersoll Aitken, American, 1878–1949",
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia",
+        "Aitken, Robert Ingersoll"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "899d3e27f0a8d1e445e60c65981b918b",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Mrs. Robert I. Aitken"
+        ]
+      }
+    },
+    {
       "id": "dpla-8466796fef1e9d30821d179139fe0a48",
       "title": [
         "Photograph"
@@ -1342,239 +1569,6 @@
         "provider": "California Digital Library",
         "rights": [
           "Please contact the contributing institution for more information regarding the copyright status of this object."
-        ]
-      }
-    },
-    {
-      "id": "dpla-80027239c3054e25cb9011961b87f5e8",
-      "title": [
-        "Photograph"
-      ],
-      "type": "image",
-      "source": "Digital Public Library of America",
-      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-3B9A7E41A5762-000001",
-      "original": "http://n2t.net/ark:/65665/kq49ed8598e-e529-4661-a2c7-fa4dd4443ee6",
-      "description": [
-        "Research in Progress"
-      ],
-      "author": {
-        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
-        "exactMatch": [
-          "http://www.wikidata.org/entity/Q1129820"
-        ],
-        "name": "Cooper Hewitt, Smithsonian Design Museum"
-      },
-      "tags": [
-        "DPLA",
-        "patrimônio",
-        "fotografia"
-      ],
-      "metadata": {
-        "source_key": "dpla",
-        "dpla_id": "80027239c3054e25cb9011961b87f5e8",
-        "data_provider": {
-          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
-          "exactMatch": [
-            "http://www.wikidata.org/entity/Q1129820"
-          ],
-          "name": "Cooper Hewitt, Smithsonian Design Museum"
-        },
-        "provider": "Smithsonian Institution",
-        "rights": "http://rightsstatements.org/vocab/CNE/1.0/"
-      }
-    },
-    {
-      "id": "dpla-7a9c97e8bd0bade01be7522844a12bca",
-      "title": [
-        "Photograph"
-      ],
-      "type": "image",
-      "source": "Digital Public Library of America",
-      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-359DE1C47A542-000001",
-      "original": "http://n2t.net/ark:/65665/kq4fdfbb85a-5cf1-42ec-9d62-ebcf9b7bae55",
-      "description": [
-        "Research in Progress",
-        "Horizontal rectangle. Detail showing angle of sculpture complex. A herm, arms outstretched, is flanked by panels sculpted with figures. See possible sketch (1957-122-67)"
-      ],
-      "author": "Robert Ingersoll Aitken, American, 1878–1949",
-      "tags": [
-        "DPLA",
-        "patrimônio",
-        "fotografia",
-        "Aitken, Robert Ingersoll"
-      ],
-      "metadata": {
-        "source_key": "dpla",
-        "dpla_id": "7a9c97e8bd0bade01be7522844a12bca",
-        "data_provider": {
-          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
-          "exactMatch": [
-            "http://www.wikidata.org/entity/Q1129820"
-          ],
-          "name": "Cooper Hewitt, Smithsonian Design Museum"
-        },
-        "provider": "Smithsonian Institution",
-        "rights": [
-          "Gift of Mrs. Robert I. Aitken"
-        ]
-      }
-    },
-    {
-      "id": "dpla-758c08f2ab1e8133e4a5f1d357e5c54b",
-      "title": [
-        "Photograph"
-      ],
-      "type": "image",
-      "source": "Digital Public Library of America",
-      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-986CD25811392-000001",
-      "original": "http://n2t.net/ark:/65665/kq4f65514e0-fdb7-4001-b719-ff27159d26ca",
-      "description": [
-        "Research in Progress",
-        "Horizontal rectangle. The Bridal Home of Professor Wilson, Elleracy, England."
-      ],
-      "author": {
-        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
-        "exactMatch": [
-          "http://www.wikidata.org/entity/Q1129820"
-        ],
-        "name": "Cooper Hewitt, Smithsonian Design Museum"
-      },
-      "tags": [
-        "DPLA",
-        "patrimônio",
-        "fotografia"
-      ],
-      "metadata": {
-        "source_key": "dpla",
-        "dpla_id": "758c08f2ab1e8133e4a5f1d357e5c54b",
-        "data_provider": {
-          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
-          "exactMatch": [
-            "http://www.wikidata.org/entity/Q1129820"
-          ],
-          "name": "Cooper Hewitt, Smithsonian Design Museum"
-        },
-        "provider": "Smithsonian Institution",
-        "rights": [
-          "Gift of Mrs. Dexter J. Purinton"
-        ]
-      }
-    },
-    {
-      "id": "dpla-7518f1d8d9a64622401c3940a3d2378d",
-      "title": [
-        "Photograph"
-      ],
-      "type": "image",
-      "source": "Digital Public Library of America",
-      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-1E1737ED0FD42-000001",
-      "original": "http://n2t.net/ark:/65665/kq44903558f-7328-4930-9e04-66d326efb89b",
-      "description": [
-        "Research in Progress",
-        "Horizontal rectangle. View through trees at a two storied white frame building. Two soldiers stand in foreground."
-      ],
-      "author": {
-        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
-        "exactMatch": [
-          "http://www.wikidata.org/entity/Q1129820"
-        ],
-        "name": "Cooper Hewitt, Smithsonian Design Museum"
-      },
-      "tags": [
-        "DPLA",
-        "patrimônio",
-        "fotografia"
-      ],
-      "metadata": {
-        "source_key": "dpla",
-        "dpla_id": "7518f1d8d9a64622401c3940a3d2378d",
-        "data_provider": {
-          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
-          "exactMatch": [
-            "http://www.wikidata.org/entity/Q1129820"
-          ],
-          "name": "Cooper Hewitt, Smithsonian Design Museum"
-        },
-        "provider": "Smithsonian Institution",
-        "rights": [
-          "Given by Mrs. George Linzboth (Mrs. Kate Zogbaum Linzboth)"
-        ]
-      }
-    },
-    {
-      "id": "dpla-74fc3474e021a5a25c253ccd7265fe84",
-      "title": [
-        "Photograph"
-      ],
-      "type": "image",
-      "source": "Digital Public Library of America",
-      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-557CCF59D71D2-000001",
-      "original": "http://n2t.net/ark:/65665/kq489355053-f0b5-4809-9f55-a8b3e9116a12",
-      "description": [
-        "Research in Progress",
-        "Horizontal rectangle. Large group of prisoners, with a few Union guards."
-      ],
-      "author": {
-        "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
-        "exactMatch": [
-          "http://www.wikidata.org/entity/Q1129820"
-        ],
-        "name": "Cooper Hewitt, Smithsonian Design Museum"
-      },
-      "tags": [
-        "DPLA",
-        "patrimônio",
-        "fotografia"
-      ],
-      "metadata": {
-        "source_key": "dpla",
-        "dpla_id": "74fc3474e021a5a25c253ccd7265fe84",
-        "data_provider": {
-          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
-          "exactMatch": [
-            "http://www.wikidata.org/entity/Q1129820"
-          ],
-          "name": "Cooper Hewitt, Smithsonian Design Museum"
-        },
-        "provider": "Smithsonian Institution",
-        "rights": [
-          "Given by Mrs. George Linzboth (Mrs. Kate Zogbaum Linzboth)"
-        ]
-      }
-    },
-    {
-      "id": "dpla-7244fb2f599450b48c9edc107c49ac4c",
-      "title": [
-        "Photograph"
-      ],
-      "type": "image",
-      "source": "Digital Public Library of America",
-      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-92CDDF48F18E2-000001",
-      "original": "http://n2t.net/ark:/65665/kq485f48f40-e313-48b3-8221-757eb9660638",
-      "description": [
-        "Research in Progress"
-      ],
-      "author": "Gustav Jensen, Danish, 1898 – 1954",
-      "tags": [
-        "DPLA",
-        "patrimônio",
-        "fotografia",
-        "Graphic arts",
-        "Jensen, Gustav"
-      ],
-      "metadata": {
-        "source_key": "dpla",
-        "dpla_id": "7244fb2f599450b48c9edc107c49ac4c",
-        "data_provider": {
-          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
-          "exactMatch": [
-            "http://www.wikidata.org/entity/Q1129820"
-          ],
-          "name": "Cooper Hewitt, Smithsonian Design Museum"
-        },
-        "provider": "Smithsonian Institution",
-        "rights": [
-          "Gift of Ellen Gustav Jensen"
         ]
       }
     },
@@ -1761,6 +1755,6 @@
       "wikimedia"
     ],
     "requests_this_run": 4,
-    "daily_requests": 4
+    "daily_requests": 8
   }
 }
