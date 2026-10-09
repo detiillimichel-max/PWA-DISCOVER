@@ -1,6 +1,6 @@
 {
-  "version": 39,
-  "generated_at": "2026-10-09T03:36:30Z",
+  "version": 40,
+  "generated_at": "2026-10-09T17:42:29Z",
   "items": [
     {
       "id": "demo-egypt",
@@ -1755,6 +1755,6 @@
       "wikimedia"
     ],
     "requests_this_run": 4,
-    "daily_requests": 4
+    "daily_requests": 8
   }
 }
