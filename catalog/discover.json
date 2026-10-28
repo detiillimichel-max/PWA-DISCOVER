@@ -1,6 +1,6 @@
 {
-  "version": 76,
-  "generated_at": "2026-10-27T17:00:42Z",
+  "version": 77,
+  "generated_at": "2026-10-28T02:59:10Z",
   "items": [
     {
       "id": "demo-egypt",
@@ -1573,6 +1573,72 @@
       }
     },
     {
+      "id": "wikimedia-360-66480094",
+      "title": "Alcazar de Toledo y Academia de Infantería.jpg",
+      "type": "panorama360",
+      "source": "Wikimedia Commons",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Alcazar_de_Toledo_y_Academia_de_Infanter%C3%ADa.jpg/3840px-Alcazar_de_Toledo_y_Academia_de_Infanter%C3%ADa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "panorama": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Alcazar_de_Toledo_y_Academia_de_Infanter%C3%ADa.jpg/3840px-Alcazar_de_Toledo_y_Academia_de_Infanter%C3%ADa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "original": "https://commons.wikimedia.org/wiki/File:Alcazar_de_Toledo_y_Academia_de_Infanter%C3%ADa.jpg",
+      "description": "Alcazar (Fortress) of Toledo and Academy of Infantry - at sunset",
+      "author": "Galopax",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "tags": [
+        "Wikimedia Commons",
+        "360",
+        "panorama",
+        "equiretangular"
+      ],
+      "metadata": {
+        "source_key": "wikimedia",
+        "commons_title": "File:Alcazar de Toledo y Academia de Infantería.jpg",
+        "commons_page_id": 66480094,
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Alcazar_de_Toledo_y_Academia_de_Infanter%C3%ADa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Alcazar_de_Toledo_y_Academia_de_Infanter%C3%ADa.jpg/3840px-Alcazar_de_Toledo_y_Academia_de_Infanter%C3%ADa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "width": 6432,
+        "height": 3216,
+        "mime": "image/jpeg",
+        "projection": "equirectangular",
+        "projection_validation": "category + aspect-ratio",
+        "delivery_width": 4096,
+        "category": "Category:360° panoramas with equirectangular projection"
+      }
+    },
+    {
+      "id": "wikimedia-360-61652380",
+      "title": "2017.02.18 Equirectangular DC People and Places 3780 (32132214284).jpg",
+      "type": "panorama360",
+      "source": "Wikimedia Commons",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/2017.02.18_Equirectangular_DC_People_and_Places_3780_%2832132214284%29.jpg/3840px-2017.02.18_Equirectangular_DC_People_and_Places_3780_%2832132214284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "panorama": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/2017.02.18_Equirectangular_DC_People_and_Places_3780_%2832132214284%29.jpg/3840px-2017.02.18_Equirectangular_DC_People_and_Places_3780_%2832132214284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "original": "https://commons.wikimedia.org/wiki/File:2017.02.18_Equirectangular_DC_People_and_Places_3780_(32132214284).jpg",
+      "description": "African American Civil War Memorial, Washington, DC USA - Virtual Reality",
+      "author": "Ted Eytan",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "tags": [
+        "Wikimedia Commons",
+        "360",
+        "panorama",
+        "equiretangular"
+      ],
+      "metadata": {
+        "source_key": "wikimedia",
+        "commons_title": "File:2017.02.18 Equirectangular DC People and Places 3780 (32132214284).jpg",
+        "commons_page_id": 61652380,
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/2017.02.18_Equirectangular_DC_People_and_Places_3780_%2832132214284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/2017.02.18_Equirectangular_DC_People_and_Places_3780_%2832132214284%29.jpg/3840px-2017.02.18_Equirectangular_DC_People_and_Places_3780_%2832132214284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "width": 5376,
+        "height": 2688,
+        "mime": "image/jpeg",
+        "projection": "equirectangular",
+        "projection_validation": "category + aspect-ratio",
+        "delivery_width": 4096,
+        "category": "Category:360° panoramas with equirectangular projection"
+      }
+    },
+    {
       "id": "wikimedia-360-46701183",
       "title": "Aldara parks.jpg",
       "type": "panorama360",
@@ -1675,76 +1741,6 @@
         "delivery_width": 4096,
         "category": "Category:360° panoramas with equirectangular projection"
       }
-    },
-    {
-      "id": "wikimedia-360-146814030",
-      "title": "360˚ View- Crater in Western Arabia Terra with Stair-Stepped Hills and Dark Dunes (32974048184).jpg",
-      "type": "panorama360",
-      "source": "Wikimedia Commons",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_%2832974048184%29.jpg/3840px-360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_%2832974048184%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "panorama": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_%2832974048184%29.jpg/3840px-360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_%2832974048184%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "original": "https://commons.wikimedia.org/wiki/File:360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_(32974048184).jpg",
-      "description": "Created using NASA/HiRISE Digital Terrain Model and Orthoimagery data in Autodesk Maya, Adobe Photoshop, gdal, and ffmpeg. 360˚ Video: www.youtube.com/watch?v=cR_E-AF3lsQ Data Credit: NASA/JPL/University of Arizona/USGS Data Sources: https://www.uahirise.org/dtm/dtm.php?ID=PSP_002047_1890",
-      "author": "Kevin M. Gill",
-      "license": "Public domain",
-      "license_url": "",
-      "tags": [
-        "Wikimedia Commons",
-        "360",
-        "panorama",
-        "equiretangular",
-        "Marte",
-        "espaço"
-      ],
-      "metadata": {
-        "source_key": "wikimedia",
-        "commons_title": "File:360˚ View- Crater in Western Arabia Terra with Stair-Stepped Hills and Dark Dunes (32974048184).jpg",
-        "commons_page_id": 146814030,
-        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_%2832974048184%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_%2832974048184%29.jpg/3840px-360%CB%9A_View-_Crater_in_Western_Arabia_Terra_with_Stair-Stepped_Hills_and_Dark_Dunes_%2832974048184%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "width": 8192,
-        "height": 4096,
-        "mime": "image/jpeg",
-        "projection": "equirectangular",
-        "projection_validation": "category + aspect-ratio",
-        "delivery_width": 4096,
-        "category": "Category:360° panoramas of Mars"
-      }
-    },
-    {
-      "id": "wikimedia-360-146813983",
-      "title": "360˚ Projected Image- Domoni Crater (34328838116).jpg",
-      "type": "panorama360",
-      "source": "Wikimedia Commons",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/360%CB%9A_Projected_Image-_Domoni_Crater_%2834328838116%29.jpg/3840px-360%CB%9A_Projected_Image-_Domoni_Crater_%2834328838116%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "panorama": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/360%CB%9A_Projected_Image-_Domoni_Crater_%2834328838116%29.jpg/3840px-360%CB%9A_Projected_Image-_Domoni_Crater_%2834328838116%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "original": "https://commons.wikimedia.org/wiki/File:360%CB%9A_Projected_Image-_Domoni_Crater_(34328838116).jpg",
-      "description": "360˚ Projected Image: Domoni Crater",
-      "author": "Kevin M. Gill",
-      "license": "CC BY 2.0",
-      "license_url": "https://creativecommons.org/licenses/by/2.0",
-      "tags": [
-        "Wikimedia Commons",
-        "360",
-        "panorama",
-        "equiretangular",
-        "Marte",
-        "espaço"
-      ],
-      "metadata": {
-        "source_key": "wikimedia",
-        "commons_title": "File:360˚ Projected Image- Domoni Crater (34328838116).jpg",
-        "commons_page_id": 146813983,
-        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/360%CB%9A_Projected_Image-_Domoni_Crater_%2834328838116%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/360%CB%9A_Projected_Image-_Domoni_Crater_%2834328838116%29.jpg/3840px-360%CB%9A_Projected_Image-_Domoni_Crater_%2834328838116%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "width": 8192,
-        "height": 4096,
-        "mime": "image/jpeg",
-        "projection": "equirectangular",
-        "projection_validation": "category + aspect-ratio",
-        "delivery_width": 4096,
-        "category": "Category:360° panoramas of Mars"
-      }
     }
   ],
   "pipeline": {
@@ -1755,6 +1751,6 @@
       "wikimedia"
     ],
     "requests_this_run": 4,
-    "daily_requests": 8
+    "daily_requests": 4
   }
 }
