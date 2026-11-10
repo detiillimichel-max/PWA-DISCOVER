@@ -1,6 +1,6 @@
 {
-  "version": 103,
-  "generated_at": "2026-11-10T05:10:12Z",
+  "version": 104,
+  "generated_at": "2026-11-10T19:01:51Z",
   "items": [
     {
       "id": "demo-egypt",
@@ -1506,6 +1506,42 @@
       }
     },
     {
+      "id": "dpla-8c48f4117b1f1e25fd4e1f1468ad7128",
+      "title": [
+        "Photograph"
+      ],
+      "type": "image",
+      "source": "Digital Public Library of America",
+      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-77649299DA172-000001",
+      "original": "http://n2t.net/ark:/65665/kq4826cbf48-7b00-497d-b0b1-3054e2901454",
+      "description": [
+        "Research in Progress",
+        "Vertical rectangle. View of an exhibition gallery showing the plaster head of ''Freedom'' intended for the McKinley Monument to be erected in Golden Gate Park, San Francisco. The head is seen from the left front, the shoulders draped; three other plaster groups flank it.See possible sketch (1957-122-8)"
+      ],
+      "author": "Robert Ingersoll Aitken, American, 1878–1949",
+      "tags": [
+        "DPLA",
+        "patrimônio",
+        "fotografia",
+        "Aitken, Robert Ingersoll"
+      ],
+      "metadata": {
+        "source_key": "dpla",
+        "dpla_id": "8c48f4117b1f1e25fd4e1f1468ad7128",
+        "data_provider": {
+          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1129820"
+          ],
+          "name": "Cooper Hewitt, Smithsonian Design Museum"
+        },
+        "provider": "Smithsonian Institution",
+        "rights": [
+          "Gift of Mrs. Robert I. Aitken"
+        ]
+      }
+    },
+    {
       "id": "dpla-8baba62d341309919fe792589af5e28b",
       "title": [
         "Photograph"
@@ -1542,42 +1578,6 @@
         "provider": "Smithsonian Institution",
         "rights": [
           "Gift of Allyn Cox"
-        ]
-      }
-    },
-    {
-      "id": "dpla-8a7c899d5631bbb5df3c50cba5195f4c",
-      "title": [
-        "Photograph"
-      ],
-      "type": "image",
-      "source": "Digital Public Library of America",
-      "image": "https://ids.si.edu/ids/deliveryService?id=CHSDM-D14D2068F9592-000001",
-      "original": "http://n2t.net/ark:/65665/kq4d457ee23-701d-4af1-af5f-ecc5674eed88",
-      "description": [
-        "Research in Progress",
-        "A photograph of a chair designed by Hector Guimard that is upholstered in fabric and has a carved wood top and legs."
-      ],
-      "author": "Hector Guimard, French, 1867–1942",
-      "tags": [
-        "DPLA",
-        "patrimônio",
-        "fotografia",
-        "Guimard, Hector"
-      ],
-      "metadata": {
-        "source_key": "dpla",
-        "dpla_id": "8a7c899d5631bbb5df3c50cba5195f4c",
-        "data_provider": {
-          "@id": "http://dp.la/api/contributor/cooper-hewitt-smithsonian-design-museum",
-          "exactMatch": [
-            "http://www.wikidata.org/entity/Q1129820"
-          ],
-          "name": "Cooper Hewitt, Smithsonian Design Museum"
-        },
-        "provider": "Smithsonian Institution",
-        "rights": [
-          "Gift of Madame Hector Guimard"
         ]
       }
     },
@@ -1760,6 +1760,6 @@
       "wikimedia"
     ],
     "requests_this_run": 4,
-    "daily_requests": 4
+    "daily_requests": 8
   }
 }
